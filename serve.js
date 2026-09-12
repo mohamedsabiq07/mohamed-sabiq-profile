@@ -3,7 +3,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = process.env.PORT || 3000;
+let PORT = parseInt(process.env.PORT, 10) || 3000;
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -15,7 +15,9 @@ const MIME_TYPES = {
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
   '.svg': 'image/svg+xml',
-  '.ico': 'image/x-icon'
+  '.ico': 'image/x-icon',
+  '.woff': 'font/woff',
+  '.woff2': 'font/woff2'
 };
 
 const server = http.createServer((req, res) => {
@@ -48,7 +50,8 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, {
       'Content-Type': contentType,
       'Content-Length': stats.size,
-      'Cache-Control': 'no-cache'
+      'Cache-Control': 'no-cache',
+      'Access-Control-Allow-Origin': '*'
     });
 
     const stream = fs.createReadStream(filePath);
@@ -56,9 +59,23 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`\n======================================================`);
-  console.log(`⚡ Mohamed Sabiq Portfolio Preview Server Running!`);
-  console.log(`👉 Open in your browser: http://localhost:${PORT}`);
-  console.log(`======================================================\n`);
-});
+function startServer(port) {
+  server.listen(port, '0.0.0.0', () => {
+    console.log(`\n======================================================`);
+    console.log(`⚡ Mohamed Sabiq Portfolio Server Running!`);
+    console.log(`👉 Local:   http://localhost:${port}`);
+    console.log(`👉 Network: http://127.0.0.1:${port}`);
+    console.log(`======================================================\n`);
+  });
+
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.log(`⚠️ Port ${port} is busy, trying port ${port + 1}...`);
+      startServer(port + 1);
+    } else {
+      console.error('Server error:', err);
+    }
+  });
+}
+
+startServer(PORT);
