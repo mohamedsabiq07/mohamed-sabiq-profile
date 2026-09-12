@@ -11,6 +11,8 @@ const caseStudies = {
     tags: ['Product Management', 'MVP Development', 'B2B Marketplace', 'Generative AI', 'UAE Construction'],
     category: 'growth',
     image: 'assets/images/supplysouq_homepage.png',
+    liveUrl: 'https://supplysouq.com',
+    liveUrlDisplay: 'supplysouq.com',
     summary: 'Identified a major structural friction point in UAE contractor-supplier procurement: opaque pricing, slow quotation cycles, and fragmented vendor discovery. Architected and led SupplySouq from ideation to working MVP.',
     metrics: [
       { label: 'Stage', value: 'Working MVP' },
@@ -39,6 +41,8 @@ const caseStudies = {
     tags: ['Website Development', 'Local SEO', 'Lead Generation', 'AI Content Strategy', 'Conversion Optimization'],
     category: 'growth',
     image: 'assets/images/ridout_homepage.png',
+    liveUrl: 'https://ridoutpestcontrol.ae',
+    liveUrlDisplay: 'ridoutpestcontrol.ae',
     summary: 'Built and scaled the entire digital presence for RidOut Pest Control Services in the UAE, driving customer acquisition across Dubai, Sharjah, and Ajman.',
     metrics: [
       { label: 'Scope', value: '3 Emirates (DXB/SHJ/AJM)' },
@@ -337,9 +341,11 @@ function setupModalHandlers() {
   const modal = document.getElementById('projectModal');
   const modalTitle = document.getElementById('modalTitle');
   const modalRole = document.getElementById('modalRole');
+  const modalLiveBadge = document.getElementById('modalLiveBadge');
   const modalTags = document.getElementById('modalTags');
   const modalMetrics = document.getElementById('modalMetrics');
   const modalBody = document.getElementById('modalBody');
+  const modalLiveSiteContainer = document.getElementById('modalLiveSiteContainer');
   const closeModalBtn = document.getElementById('closeModalBtn');
 
   if (!modal) return;
@@ -354,6 +360,37 @@ function setupModalHandlers() {
       modalTitle.textContent = data.title;
       modalRole.textContent = data.role;
 
+      // Live Website Badge at Header
+      if (modalLiveBadge) {
+        if (data.liveUrl) {
+          modalLiveBadge.innerHTML = `
+            <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/15 hover:bg-sky-500/25 text-sky-400 hover:text-sky-300 border border-sky-500/40 text-xs font-bold transition-all group">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Visit Live: ${data.liveUrlDisplay}</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+            </a>
+          `;
+          modalLiveBadge.classList.remove('hidden');
+        } else {
+          modalLiveBadge.innerHTML = '';
+          modalLiveBadge.classList.add('hidden');
+        }
+      }
+
+      // Live Website Button in Modal Footer
+      if (modalLiveSiteContainer) {
+        if (data.liveUrl) {
+          modalLiveSiteContainer.innerHTML = `
+            <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white text-xs font-bold flex items-center gap-2 shadow-lg shadow-sky-500/25 transition-all">
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              <span>Visit Live Website (${data.liveUrlDisplay})</span>
+            </a>
+          `;
+        } else {
+          modalLiveSiteContainer.innerHTML = '';
+        }
+      }
+
       // Tags
       modalTags.innerHTML = data.tags.map(t => 
         `<span class="px-2.5 py-1 text-xs font-medium rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">${t}</span>`
@@ -367,13 +404,49 @@ function setupModalHandlers() {
         </div>
       `).join('');
 
-      // Body Sections
+      // Body Sections with Live Website Callout & Clickable Snapshot
       modalBody.innerHTML = `
-        ${data.image ? `
-          <div class="mb-6 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
-            <img src="${data.image}" alt="${data.title}" class="w-full h-auto max-h-72 object-cover object-top hover:scale-105 transition-transform duration-500">
+        ${data.liveUrl ? `
+          <div class="mb-5 p-3.5 rounded-xl bg-gradient-to-r from-sky-500/15 via-sky-500/5 to-transparent border border-sky-500/30 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-globe text-base"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-white flex items-center gap-1.5">
+                  <span>Live Project Link</span>
+                  <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                </div>
+                <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="text-xs text-sky-400 hover:text-sky-300 underline font-mono-tag">
+                  ${data.liveUrl}
+                </a>
+              </div>
+            </div>
+            <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-full bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold shrink-0 flex items-center gap-1.5 shadow-md shadow-sky-500/20 transition-all">
+              <span>Open Website</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
           </div>
         ` : ''}
+
+        ${data.image ? `
+          <div class="mb-6 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black relative group">
+            ${data.liveUrl ? `
+              <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="block relative group cursor-pointer" title="Click to visit ${data.liveUrlDisplay}">
+                <img src="${data.image}" alt="${data.title}" class="w-full h-auto max-h-72 object-cover object-top hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white">
+                  <span class="px-4 py-2 rounded-full bg-sky-500 text-slate-950 font-bold text-xs flex items-center gap-2 shadow-xl shadow-sky-500/30">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    <span>Redirect to ${data.liveUrlDisplay}</span>
+                  </span>
+                </div>
+              </a>
+            ` : `
+              <img src="${data.image}" alt="${data.title}" class="w-full h-auto max-h-72 object-cover object-top hover:scale-105 transition-transform duration-500">
+            `}
+          </div>
+        ` : ''}
+
         <p class="text-slate-300 text-sm leading-relaxed mb-6">${data.summary}</p>
         ${data.sections.map(s => `
           <div class="mb-5">
