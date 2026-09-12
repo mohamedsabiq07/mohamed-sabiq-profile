@@ -10,6 +10,7 @@ const caseStudies = {
     role: 'Founder & Product Lead',
     tags: ['Product Management', 'MVP Development', 'B2B Marketplace', 'Generative AI', 'UAE Construction'],
     category: 'growth',
+    image: 'assets/images/supplysouq_homepage.png',
     summary: 'Identified a major structural friction point in UAE contractor-supplier procurement: opaque pricing, slow quotation cycles, and fragmented vendor discovery. Architected and led SupplySouq from ideation to working MVP.',
     metrics: [
       { label: 'Stage', value: 'Working MVP' },
@@ -367,6 +368,11 @@ function setupModalHandlers() {
 
       // Body Sections
       modalBody.innerHTML = `
+        ${data.image ? `
+          <div class="mb-6 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
+            <img src="${data.image}" alt="${data.title}" class="w-full h-auto max-h-72 object-cover object-top hover:scale-105 transition-transform duration-500">
+          </div>
+        ` : ''}
         <p class="text-slate-300 text-sm leading-relaxed mb-6">${data.summary}</p>
         ${data.sections.map(s => `
           <div class="mb-5">
