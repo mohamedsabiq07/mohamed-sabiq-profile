@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohamed Sabiq | Techno-Commercial Specialist & B2B Solutions Builder</title>
-  <meta name="description" content="Portfolio of Mohamed Sabiq - Electrical Engineer & B2B Growth Specialist based in the UAE. Turnaround site engineering, SupplySouq founder, and AI-accelerated workflows.">
-  <meta name="keywords" content="Mohamed Sabiq, Electrical Engineer, Technical Sales, B2B Business Development, UAE Engineering, SupplySouq, DEWA, Dubai Façade Lighting">
+  <title>Mohamed Sabiq — Techno-Commercial Specialist & Electrical Engineer</title>
+  <meta name="description" content="Portfolio of Mohamed Sabiq. Electrical Engineer & B2B Growth Specialist in the UAE. Turnaround site engineering, SupplySouq founder, and AI-accelerated workflows.">
   
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
@@ -19,16 +18,9 @@
         extend: {
           colors: {
             brand: {
-              50: '#f0f9ff',
               400: '#38bdf8',
               500: '#0ea5e9',
               600: '#0284c7',
-              900: '#0c4a6e',
-            },
-            accent: {
-              emerald: '#10b981',
-              violet: '#8b5cf6',
-              amber: '#f59e0b'
             }
           }
         }
@@ -39,938 +31,858 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Custom CSS -->
+  <!-- Custom Elitefolio-inspired Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-[#090d16] text-slate-200 antialiased selection:bg-sky-500 selection:text-white">
+<body class="bg-[#05070c] text-slate-200 antialiased bg-grid-pattern selection:bg-sky-500 selection:text-white">
+
+  <!-- Interactive Custom Cursor (Elitefolio style) -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
 
   <!-- Ambient Glow Backgrounds -->
-  <div class="ambient-glow-1"></div>
-  <div class="ambient-glow-2"></div>
-  <div class="ambient-glow-3"></div>
+  <div class="ambient-glow-cyan top-[-100px] left-[-150px]"></div>
+  <div class="ambient-glow-purple top-[450px] right-[-150px]"></div>
 
-  <!-- STICKY NAVBAR -->
-  <header class="sticky top-0 z-40 w-full glass-nav transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <!-- FLOATING DOCK NAVBAR -->
+  <header class="fixed top-5 inset-x-0 z-50 flex justify-center px-4">
+    <nav class="glass-dock rounded-full px-5 py-3 flex items-center justify-between gap-6 max-w-4xl w-full">
       <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center font-bold text-white shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform">
-          MS
-        </div>
-        <div>
-          <span class="font-heading font-bold text-lg text-white tracking-tight block">Mohamed Sabiq</span>
-          <span class="text-xs text-sky-400 font-medium">Techno-Commercial & B2B</span>
-        </div>
+      <a href="#" class="flex items-center gap-2.5 font-display font-extrabold text-white text-base tracking-tight hover:opacity-80 transition-opacity">
+        <span class="w-7 h-7 rounded-lg bg-sky-500 flex items-center justify-center text-xs text-[#05070c] font-black">MS</span>
+        <span>MOHAMED SABIQ</span>
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
-        <a href="#projects" class="hover:text-sky-400 transition-colors">Case Studies</a>
-        <a href="#calculator" class="hover:text-sky-400 transition-colors">Impact Calculator</a>
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center gap-6 text-xs font-medium text-slate-300">
+        <a href="#services" class="hover:text-sky-400 transition-colors">Services</a>
+        <a href="#projects" class="hover:text-sky-400 transition-colors">Work</a>
+        <a href="#calculator" class="hover:text-sky-400 transition-colors">Impact</a>
         <a href="#experience" class="hover:text-sky-400 transition-colors">Experience</a>
-        <a href="#skills" class="hover:text-sky-400 transition-colors">Skills</a>
-        <a href="#certifications" class="hover:text-sky-400 transition-colors">Certifications</a>
-      </nav>
+        <a href="#why-me" class="hover:text-sky-400 transition-colors">Why Me</a>
+        <a href="#faq" class="hover:text-sky-400 transition-colors">FAQ</a>
+      </div>
 
       <!-- Action Buttons -->
-      <div class="hidden lg:flex items-center gap-3">
-        <!-- Direct CV Downloads Dropdown -->
+      <div class="hidden sm:flex items-center gap-2.5">
+        <!-- Dual CV Dropdown -->
         <div class="relative group">
-          <button class="px-4 py-2 rounded-xl btn-secondary text-xs flex items-center gap-2">
-            <i class="fa-solid fa-file-arrow-down text-sky-400"></i>
-            <span>Download CV</span>
-            <i class="fa-solid fa-chevron-down text-[10px] opacity-70"></i>
+          <button class="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-200 flex items-center gap-1.5 transition-all">
+            <i class="fa-solid fa-file-arrow-down text-sky-400 text-xs"></i>
+            <span>Resume</span>
+            <i class="fa-solid fa-chevron-down text-[9px] opacity-60"></i>
           </button>
-          <div class="absolute right-0 mt-2 w-64 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-2 hidden group-hover:block transition-all z-50">
-            <a href="./Mohamed_Sabiq_CV.pdf" download="Mohamed_Sabiq_Technical_Sales_CV.pdf" class="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-800/80 transition-colors">
-              <i class="fa-solid fa-bolt text-sky-400 mt-1"></i>
+          <div class="absolute right-0 mt-2 w-60 bg-[#0c101a] border border-slate-800 rounded-2xl shadow-2xl p-2 hidden group-hover:block transition-all z-50">
+            <a href="./Mohamed_Sabiq_CV.pdf" download="Mohamed_Sabiq_Technical_Sales_CV.pdf" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-800/70 transition-colors">
+              <i class="fa-solid fa-bolt text-sky-400 mt-1 text-xs"></i>
               <div>
-                <p class="text-xs font-semibold text-white">Technical Sales & B2B CV</p>
-                <p class="text-[11px] text-slate-400">Engineering, DEWA & Turnaround</p>
+                <p class="text-xs font-semibold text-white">Technical Sales CV</p>
+                <p class="text-[10px] text-slate-400">Engineering, DEWA & Sites</p>
               </div>
             </a>
-            <a href="./Mohamed_Sabiq_Marketing_Business_Development_CV%20(1).pdf" download="Mohamed_Sabiq_Marketing_BD_CV.pdf" class="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-800/80 transition-colors">
-              <i class="fa-solid fa-chart-line text-emerald-400 mt-1"></i>
+            <a href="./Mohamed_Sabiq_Marketing_Business_Development_CV%20(1).pdf" download="Mohamed_Sabiq_Marketing_BD_CV.pdf" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-800/70 transition-colors">
+              <i class="fa-solid fa-chart-line text-emerald-400 mt-1 text-xs"></i>
               <div>
                 <p class="text-xs font-semibold text-white">Marketing & Growth CV</p>
-                <p class="text-[11px] text-slate-400">SupplySouq, SEO & Digital BD</p>
+                <p class="text-[10px] text-slate-400">SupplySouq, SEO & BD</p>
               </div>
             </a>
           </div>
         </div>
 
         <!-- WhatsApp Quick Connect -->
-        <a href="https://wa.me/971502364014?text=Hi%20Mohamed,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl btn-primary text-xs flex items-center gap-2">
-          <i class="fa-brands fa-whatsapp text-sm text-white"></i>
-          <span>WhatsApp Chat</span>
+        <a href="https://wa.me/971502364014?text=Hi%20Mohamed,%20I%20saw%20your%20portfolio!" target="_blank" rel="noopener" class="px-4 py-1.5 rounded-full bg-sky-500 hover:bg-sky-400 text-[#05070c] text-xs font-bold transition-all shadow-lg shadow-sky-500/25 flex items-center gap-1.5">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>Let's Talk</span>
         </a>
       </div>
 
-      <!-- Mobile Hamburger Button -->
-      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white" aria-label="Toggle menu">
-        <i class="fa-solid fa-bars text-lg"></i>
+      <!-- Mobile Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-1.5 rounded-full bg-white/5 text-slate-300 hover:text-white" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars text-sm"></i>
       </button>
-    </div>
+    </nav>
 
-    <!-- Mobile Dropdown Navigation -->
-    <div id="mobileMenu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-5 space-y-4">
-      <a href="#about" class="block text-sm font-medium text-slate-300 hover:text-sky-400">About</a>
-      <a href="#projects" class="block text-sm font-medium text-slate-300 hover:text-sky-400">Case Studies</a>
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden fixed top-20 inset-x-4 bg-[#0a0e17] border border-slate-800 rounded-2xl p-6 shadow-2xl space-y-4 z-50">
+      <a href="#services" class="block text-sm font-medium text-slate-300 hover:text-sky-400">Services</a>
+      <a href="#projects" class="block text-sm font-medium text-slate-300 hover:text-sky-400">Work</a>
       <a href="#calculator" class="block text-sm font-medium text-slate-300 hover:text-sky-400">Impact Calculator</a>
       <a href="#experience" class="block text-sm font-medium text-slate-300 hover:text-sky-400">Experience</a>
-      <a href="#skills" class="block text-sm font-medium text-slate-300 hover:text-sky-400">Skills</a>
-      <a href="#certifications" class="block text-sm font-medium text-slate-300 hover:text-sky-400">Certifications</a>
-      <div class="pt-3 border-t border-slate-800 flex flex-col gap-2.5">
-        <a href="./Mohamed_Sabiq_CV.pdf" download="Mohamed_Sabiq_Technical_Sales_CV.pdf" class="w-full text-center py-2.5 rounded-xl btn-secondary text-xs flex items-center justify-center gap-2">
-          <i class="fa-solid fa-file-arrow-down text-sky-400"></i> Download Technical Sales CV
+      <a href="#why-me" class="block text-sm font-medium text-slate-300 hover:text-sky-400">Why Choose Me</a>
+      <a href="#faq" class="block text-sm font-medium text-slate-300 hover:text-sky-400">FAQ</a>
+      <div class="pt-3 border-t border-slate-800 flex flex-col gap-2">
+        <a href="./Mohamed_Sabiq_CV.pdf" download class="py-2.5 text-center rounded-xl bg-white/5 text-xs text-sky-400 font-semibold">
+          <i class="fa-solid fa-file-arrow-down mr-1"></i> Technical Sales CV
         </a>
-        <a href="./Mohamed_Sabiq_Marketing_Business_Development_CV%20(1).pdf" download="Mohamed_Sabiq_Marketing_BD_CV.pdf" class="w-full text-center py-2.5 rounded-xl btn-secondary text-xs flex items-center justify-center gap-2">
-          <i class="fa-solid fa-file-arrow-down text-emerald-400"></i> Download Marketing & BD CV
+        <a href="./Mohamed_Sabiq_Marketing_Business_Development_CV%20(1).pdf" download class="py-2.5 text-center rounded-xl bg-white/5 text-xs text-emerald-400 font-semibold">
+          <i class="fa-solid fa-file-arrow-down mr-1"></i> Marketing & Growth CV
         </a>
-        <a href="https://wa.me/971502364014?text=Hi%20Mohamed,%20I%20saw%20your%20portfolio!" target="_blank" class="w-full text-center py-2.5 rounded-xl btn-primary text-xs flex items-center justify-center gap-2">
-          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        <a href="https://wa.me/971502364014" target="_blank" class="py-2.5 text-center rounded-xl bg-sky-500 text-[#05070c] text-xs font-bold">
+          <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp Connect
         </a>
       </div>
     </div>
   </header>
 
-  <main class="relative z-10">
+  <main class="relative z-10 pt-28">
 
-    <!-- HERO SECTION -->
-    <section id="about" class="pt-12 pb-20 md:pt-20 md:pb-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Hero Text & Value Proposition -->
-        <div class="lg:col-span-7 space-y-6">
-          
-          <!-- Status Pill -->
-          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-medium text-slate-300">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>UAE Based • Sponsored Visa • Immediate Availability • RTA Driving License</span>
-          </div>
-
-          <!-- Main Heading -->
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight font-heading">
-            Bridging <span class="gradient-text-blue">Engineering Precision</span> With <span class="gradient-text-emerald">B2B Commercial Growth</span>.
-          </h1>
-
-          <!-- Bio / Elevator Pitch -->
-          <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
-            I am an <strong>Electrical & Electronics Engineering graduate</strong> with proven UAE site turnaround experience, combined with a strong entrepreneurial mindset. I independently founded the <strong>SupplySouq</strong> B2B marketplace MVP, built and scaled <strong>RidOut’s</strong> digital presence, and managed <strong>high-rise façade installations across Dubai</strong> ahead of schedule.
-          </p>
-
-          <p class="text-sm text-slate-400 leading-relaxed">
-            I combine technical product understanding, client negotiation, supplier coordination, and modern <strong class="text-slate-200">AI-assisted workflows</strong> to accelerate commercial execution and deliver bottom-line results.
-          </p>
-
-          <!-- CTAs -->
-          <div class="pt-3 flex flex-wrap items-center gap-4">
-            <a href="#projects" class="px-6 py-3.5 rounded-xl btn-primary text-sm flex items-center gap-2 font-semibold">
-              <span>Explore Proof of Work</span>
-              <i class="fa-solid fa-arrow-right text-xs"></i>
-            </a>
-            
-            <a href="#contact" class="px-6 py-3.5 rounded-xl btn-secondary text-sm flex items-center gap-2 font-medium">
-              <i class="fa-solid fa-envelope text-sky-400"></i>
-              <span>Contact Directly</span>
-            </a>
-          </div>
-
-          <!-- Social / Professional Links -->
-          <div class="pt-4 flex items-center gap-6 text-sm text-slate-400">
-            <a href="https://linkedin.com/in/mohamedsabiq-9298002" target="_blank" rel="noopener" class="hover:text-sky-400 transition-colors flex items-center gap-2">
-              <i class="fa-brands fa-linkedin text-base text-sky-400"></i>
-              <span>LinkedIn Profile</span>
-            </a>
-            <span class="text-slate-700">•</span>
-            <a href="mailto:mohamedsabiq07@gmail.com" class="hover:text-sky-400 transition-colors flex items-center gap-2">
-              <i class="fa-solid fa-at text-base text-sky-400"></i>
-              <span>mohamedsabiq07@gmail.com</span>
-            </a>
-            <span class="text-slate-700">•</span>
-            <span class="flex items-center gap-2">
-              <i class="fa-solid fa-location-dot text-base text-emerald-400"></i>
-              <span>Sharjah & Dubai, UAE</span>
-            </span>
-          </div>
-
+    <!-- HERO SECTION (Elitefolio Massive Display Title & Rotating Stamp) -->
+    <section class="min-h-[85vh] flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 relative">
+      
+      <!-- Top Badge / Availability Pill -->
+      <div class="flex items-center justify-between mb-8">
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-slate-300">
+          <span class="status-beacon"></span>
+          <span>AVAILABLE IN UAE • SPONSORED VISA • RTA DRIVING LICENSE</span>
         </div>
 
-        <!-- Hero Right Column: Fast Credentials Card -->
-        <div class="lg:col-span-5">
-          <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6 border border-slate-700/50 shadow-2xl relative">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-5">
-              <div>
-                <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Techno-Commercial Snapshot</span>
-                <h3 class="text-lg font-bold text-white font-heading">Key Quantifiable Wins</h3>
-              </div>
-              <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
-                <i class="fa-solid fa-trophy"></i>
-              </div>
-            </div>
+        <!-- Rotating Stamp Badge (Elitefolio Signature) -->
+        <div class="hidden sm:block relative w-24 h-24 shrink-0">
+          <svg class="rotating-stamp w-full h-full text-slate-400" viewBox="0 0 100 100">
+            <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
+            <text class="text-[9.5px] uppercase font-bold tracking-widest fill-current">
+              <textPath href="#circlePath" startOffset="0%">
+                ✦ SCROLL TO EXPLORE ✦ MOHAMED SABIQ ✦
+              </textPath>
+            </text>
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center text-sky-400 text-base">
+            <i class="fa-solid fa-arrow-down"></i>
+          </div>
+        </div>
+      </div>
 
-            <!-- Metric Items -->
-            <div class="space-y-4">
-              <div class="flex items-start gap-4 p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
-                <div class="w-10 h-10 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold font-heading shrink-0 text-sm">
-                  10%
-                </div>
-                <div>
-                  <h4 class="text-sm font-semibold text-white">Ahead of Schedule Turnaround</h4>
-                  <p class="text-xs text-slate-400 mt-0.5">Corniche Kalothi G+6P+40 tower wiring completed ahead of timeline with full DEWA compliance.</p>
-                </div>
-              </div>
+      <!-- Giant Headline -->
+      <div class="space-y-2 mb-8">
+        <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black font-display tracking-tighter uppercase leading-[0.95] text-white">
+          Mohamed <span class="outline-text">Sabiq</span>
+        </h1>
+        <p class="text-2xl sm:text-4xl lg:text-5xl font-extrabold font-display tracking-tight gradient-text-cyan">
+          Techno-Commercial Specialist & Solutions Builder
+        </p>
+      </div>
 
-              <div class="flex items-start gap-4 p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
-                <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold font-heading shrink-0 text-sm">
-                  18%
-                </div>
-                <div>
-                  <h4 class="text-sm font-semibold text-white">Material Cost Reduction</h4>
-                  <p class="text-xs text-slate-400 mt-0.5">Strict resource oversight on Ayat Gate façade lighting project delivered in only 14 days.</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4 p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
-                <div class="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold font-heading shrink-0 text-sm">
-                  7+
-                </div>
-                <div>
-                  <h4 class="text-sm font-semibold text-white">Concurrent UAE Sites Coordinated</h4>
-                  <p class="text-xs text-slate-400 mt-0.5">Managing technical specs, subcontractor teams, quantity surveying, and client delivery.</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4 p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
-                <div class="w-10 h-10 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold font-heading shrink-0 text-sm">
-                  MVP
-                </div>
-                <div>
-                  <h4 class="text-sm font-semibold text-white">SupplySouq B2B Marketplace</h4>
-                  <p class="text-xs text-slate-400 mt-0.5">Designed concept, UI/UX, product logic, and database from scratch using AI tools.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Quick Download CV Links in Card -->
-            <div class="pt-2 border-t border-slate-800/80 flex gap-2">
-              <a href="./Mohamed_Sabiq_CV.pdf" download class="flex-1 py-2 text-center text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-400 transition-colors">
-                <i class="fa-solid fa-file-pdf mr-1"></i> Tech Sales CV
-              </a>
-              <a href="./Mohamed_Sabiq_Marketing_Business_Development_CV%20(1).pdf" download class="flex-1 py-2 text-center text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 transition-colors">
-                <i class="fa-solid fa-file-pdf mr-1"></i> Marketing CV
-              </a>
-            </div>
-
+      <!-- Subtitle Description & Abstract Visual Bento -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-8 space-y-4">
+          <p class="text-base sm:text-xl text-slate-300 leading-relaxed font-normal">
+            Electrical & Electronics Engineer based in Sharjah & Dubai. I bridge the gap between <strong>high-rise project execution (Corniche Kalothi G+6P+40, DEWA compliance)</strong>, <strong>B2B sales & supplier negotiation</strong>, and <strong>AI-assisted digital venture building (SupplySouq & RidOut)</strong>.
+          </p>
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a href="#projects" class="px-6 py-3.5 rounded-full bg-sky-500 hover:bg-sky-400 text-[#05070c] font-bold text-xs tracking-wide uppercase transition-all shadow-xl shadow-sky-500/20 flex items-center gap-2">
+              <span>View Case Studies</span>
+              <i class="fa-solid fa-arrow-right text-[11px]"></i>
+            </a>
+            <a href="#calculator" class="px-6 py-3.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold text-xs tracking-wide uppercase transition-all flex items-center gap-2">
+              <i class="fa-solid fa-calculator text-sky-400"></i>
+              <span>Project Impact ROI</span>
+            </a>
           </div>
         </div>
 
+        <!-- Right Side Floating Abstract Asset from Elitefolio -->
+        <div class="lg:col-span-4 flex justify-center lg:justify-end">
+          <div class="framer-card p-4 rounded-3xl max-w-xs w-full bg-gradient-to-br from-slate-900 to-black border border-white/10">
+            <div class="flex items-center justify-between mb-3 text-xs text-slate-400">
+              <span class="font-mono-tag text-sky-400">PROVEN TRACK RECORD</span>
+              <span class="text-[11px]">UAE</span>
+            </div>
+            <img src="assets/images/hero_abstract.png" alt="Abstract 3D Shape" class="w-full h-32 object-contain rounded-xl mb-3 hover:rotate-6 transition-transform">
+            <div class="grid grid-cols-2 gap-2 text-center text-xs">
+              <div class="p-2 rounded-xl bg-white/5">
+                <span class="block font-bold text-base text-sky-400 font-display">10%</span>
+                <span class="text-[10px] text-slate-400">Ahead of Schedule</span>
+              </div>
+              <div class="p-2 rounded-xl bg-white/5">
+                <span class="block font-bold text-base text-emerald-400 font-display">18%</span>
+                <span class="text-[10px] text-slate-400">Material Savings</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- INFINITE MARQUEE TICKER (Elitefolio Ribbon) -->
+    <section class="py-5 bg-white/[0.02] border-y border-white/10 marquee-wrapper">
+      <div class="marquee-content gap-8 items-center text-xs sm:text-sm font-bold tracking-widest uppercase font-mono-tag text-slate-400">
+        <span>✦ UAE ELECTRICAL SITE ENGINEER</span>
+        <span>✦ B2B BUSINESS DEVELOPMENT & SALES</span>
+        <span>✦ SUPPLYSOUQ B2B MARKETPLACE MVP</span>
+        <span>✦ 18% MATERIAL COST REDUCTION</span>
+        <span>✦ DEWA STANDARDS COMPLIANCE</span>
+        <span>✦ AI-ASSISTED WORKFLOW AUTOMATION</span>
+        <span>✦ 7 CONCURRENT UAE FAÇADE PROJECTS</span>
+        <span>✦ RTA DRIVING LICENSE & SPONSORED VISA</span>
+      </div>
+      <div class="marquee-content gap-8 items-center text-xs sm:text-sm font-bold tracking-widest uppercase font-mono-tag text-slate-400" aria-hidden="true">
+        <span>✦ UAE ELECTRICAL SITE ENGINEER</span>
+        <span>✦ B2B BUSINESS DEVELOPMENT & SALES</span>
+        <span>✦ SUPPLYSOUQ B2B MARKETPLACE MVP</span>
+        <span>✦ 18% MATERIAL COST REDUCTION</span>
+        <span>✦ DEWA STANDARDS COMPLIANCE</span>
+        <span>✦ AI-ASSISTED WORKFLOW AUTOMATION</span>
+        <span>✦ 7 CONCURRENT UAE FAÇADE PROJECTS</span>
+        <span>✦ RTA DRIVING LICENSE & SPONSORED VISA</span>
       </div>
     </section>
 
-    <!-- SECTION: PROOF OF WORK & CASE STUDIES -->
-    <section id="projects" class="py-20 bg-slate-950/60 border-y border-slate-800/60 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Section Header -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+    <!-- SERVICES / COMPETENCY BENTO CARDS (Framer 3D Spotlight Cards) -->
+    <section id="services" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+        <div>
+          <span class="font-mono-tag text-xs font-semibold uppercase tracking-wider text-sky-400 block mb-2">01 // CORE COMPETENCIES</span>
+          <h2 class="text-3xl sm:text-5xl font-black text-white font-display uppercase tracking-tight">
+            Specialized Services
+          </h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-md">
+          Combining technical precision with commercial execution to accelerate project delivery and revenue.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Bento Card 1: Technical Sales & Site Engineering -->
+        <div class="framer-card spotlight-card p-8 flex flex-col justify-between group">
           <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-3">
-              <i class="fa-solid fa-briefcase"></i> Featured Proof of Work
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-lg">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <div class="icon-circle-btn">
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </div>
             </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading tracking-tight">
-              Real-World Execution & Ventures
-            </h2>
-            <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl">
-              Concrete projects demonstrating problem-solving, rapid execution, cost discipline, and entrepreneurial product development.
+            <h3 class="text-xl font-bold text-white font-display mb-3">
+              Technical Sales & Site Engineering
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+              Leading high-rise façade lighting turnaround, coordinating subcontractors and suppliers, ensuring strict DEWA compliance, and conducting accurate quantity surveying.
             </p>
           </div>
-
-          <!-- Perspective / Filter Switcher -->
-          <div class="flex items-center gap-2 p-1.5 rounded-2xl bg-slate-900 border border-slate-800 shrink-0">
-            <button class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-sky-500 text-white shadow-lg transition-all" data-filter="all">
-              All Highlights
-            </button>
-            <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 hover:text-white transition-all" data-filter="engineering">
-              Site & Engineering
-            </button>
-            <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 hover:text-white transition-all" data-filter="growth">
-              Product & Digital Growth
-            </button>
+          <div class="pt-6 border-t border-white/10 flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono-tag bg-white/5 text-slate-300">DEWA Compliance</span>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono-tag bg-white/5 text-slate-300">AutoCAD & DIALux</span>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono-tag bg-white/5 text-slate-300">BOQ & Costing</span>
           </div>
         </div>
 
-        <!-- Project Grid -->
-        <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-          <!-- Card 1: SupplySouq (Product / B2B) -->
-          <div class="project-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="growth">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-2.5 py-1 rounded-md text-xs font-semibold badge-ai">
-                  <i class="fa-solid fa-cubes mr-1"></i> B2B Marketplace MVP
-                </span>
-                <span class="text-xs text-slate-400">Founder & Product Lead</span>
+        <!-- Bento Card 2: Venture & Product Building -->
+        <div class="framer-card spotlight-card p-8 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-lg">
+                <i class="fa-solid fa-cubes"></i>
               </div>
-              
-              <h3 class="text-xl font-bold text-white font-heading mb-2 hover:text-sky-400 transition-colors">
-                SupplySouq — UAE Contractor Procurement
-              </h3>
-              
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
-                Conceptualized and architected an MVP solving the fragmented material-supply procurement workflow for UAE subcontractors and suppliers.
-              </p>
-
-              <ul class="space-y-2 text-xs text-slate-400 mb-6">
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                  <span>Defined customer persona, marketplace model, and logic.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                  <span>Leveraged Generative AI for rapid wireframing & research.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                  <span>End-to-end product requirements & commercial framework.</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-              <span class="text-xs font-semibold text-sky-400">Product Strategy • MVP</span>
-              <button data-open-modal="supply-souq" class="text-xs font-semibold text-white hover:text-sky-400 transition-colors flex items-center gap-1.5">
-                <span>View Case Study</span>
-                <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Card 2: Corniche Kalothi (Engineering Turnaround) -->
-          <div class="project-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="engineering">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-2.5 py-1 rounded-md text-xs font-semibold badge-tech">
-                  <i class="fa-solid fa-building mr-1"></i> High-Rise Turnaround
-                </span>
-                <span class="text-xs text-slate-400">G + 6P + 40 Tower</span>
+              <div class="icon-circle-btn">
+                <i class="fa-solid fa-arrow-right text-xs"></i>
               </div>
-              
-              <h3 class="text-xl font-bold text-white font-heading mb-2 hover:text-sky-400 transition-colors">
-                Corniche Kalothi Project Recovery
-              </h3>
-              
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
-                Took charge of a critically delayed 40-floor façade lighting project with severe documentation gaps and subcontractor shortages.
-              </p>
-
-              <ul class="space-y-2 text-xs text-slate-400 mb-6">
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
-                  <span>Delivered wiring <strong>10% ahead of schedule</strong>.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
-                  <span>Ensured 100% adherence to DEWA standards and safety.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
-                  <span>Resolved supplier delivery bottlenecks in real time.</span>
-                </li>
-              </ul>
             </div>
-
-            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-              <span class="text-xs font-semibold text-emerald-400">DEWA Compliant • 10% Faster</span>
-              <button data-open-modal="corniche-kalothi" class="text-xs font-semibold text-white hover:text-sky-400 transition-colors flex items-center gap-1.5">
-                <span>View Case Study</span>
-                <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </button>
-            </div>
+            <h3 class="text-xl font-bold text-white font-display mb-3">
+              B2B Marketplace & Product Lead
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+              Founder of SupplySouq: translating UAE contractor procurement bottlenecks into a working B2B marketplace MVP, UX wireframes, and commercial monetization framework.
+            </p>
           </div>
-
-          <!-- Card 3: RidOut Pest Control (Digital Growth & Web) -->
-          <div class="project-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="growth">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-2.5 py-1 rounded-md text-xs font-semibold badge-biz">
-                  <i class="fa-solid fa-chart-line mr-1"></i> Digital Marketing & Web
-                </span>
-                <span class="text-xs text-slate-400">RidOut Pest Control</span>
-              </div>
-              
-              <h3 class="text-xl font-bold text-white font-heading mb-2 hover:text-sky-400 transition-colors">
-                RidOut Digital Growth & Multi-Emirate SEO
-              </h3>
-              
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
-                Engineered the digital business infrastructure from zero to launch, targeting high-intent customer acquisition across Dubai, Sharjah, and Ajman.
-              </p>
-
-              <ul class="space-y-2 text-xs text-slate-400 mb-6">
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
-                  <span>Developed full website, copy, and localized service pages.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
-                  <span>Built AI-assisted marketing and content creation pipelines.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
-                  <span>Optimized conversion points for inbound inquiries.</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-              <span class="text-xs font-semibold text-emerald-400">Local SEO • Lead Gen</span>
-              <button data-open-modal="ridout" class="text-xs font-semibold text-white hover:text-sky-400 transition-colors flex items-center gap-1.5">
-                <span>View Case Study</span>
-                <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </button>
-            </div>
+          <div class="pt-6 border-t border-white/10 flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono-tag bg-white/5 text-slate-300">Product Strategy</span>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono-tag bg-white/5 text-slate-300">MVP Building</span>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono-tag bg-white/5 text-slate-300">AI-Assisted Dev</span>
           </div>
-
-          <!-- Card 4: Ayat Gate (Cost Control & Speed) -->
-          <div class="project-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="engineering">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-2.5 py-1 rounded-md text-xs font-semibold badge-tech">
-                  <i class="fa-solid fa-stopwatch mr-1"></i> Fast-Track Execution
-                </span>
-                <span class="text-xs text-slate-400">Ayat Gate</span>
-              </div>
-              
-              <h3 class="text-xl font-bold text-white font-heading mb-2 hover:text-sky-400 transition-colors">
-                Ayat Gate Façade Lighting Delivery
-              </h3>
-              
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
-                Directed a newly assembled crew to install and commission lighting in just 2 weeks (25% faster than standard timelines) while saving 18% in material costs.
-              </p>
-
-              <ul class="space-y-2 text-xs text-slate-400 mb-6">
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                  <span>Completed in 14 days; secured official completion certificate.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                  <span><strong>18% material cost reduction</strong> via resource oversight.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                  <span>Precision quantity surveying and zero cable wastage.</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-              <span class="text-xs font-semibold text-sky-400">18% Cost Saved • 14 Days</span>
-              <button data-open-modal="ayat-gate" class="text-xs font-semibold text-white hover:text-sky-400 transition-colors flex items-center gap-1.5">
-                <span>View Case Study</span>
-                <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Card 5: Imperial Palace (Turnkey Delivery) -->
-          <div class="project-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="engineering">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-2.5 py-1 rounded-md text-xs font-semibold badge-tech">
-                  <i class="fa-solid fa-award mr-1"></i> Rapid Sign-off
-                </span>
-                <span class="text-xs text-slate-400">Deira, Dubai</span>
-              </div>
-              
-              <h3 class="text-xl font-bold text-white font-heading mb-2 hover:text-sky-400 transition-colors">
-                Imperial Palace 18-Day Handover
-              </h3>
-              
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
-                Spearheaded the turnkey installation for Imperial Palace in Deira, accelerating schedules by 25% to achieve final inspection sign-off in 18 days.
-              </p>
-
-              <ul class="space-y-2 text-xs text-slate-400 mb-6">
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                  <span>Job completion certification signed off in record time.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                  <span>First-pass final inspection without costly re-testing.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                  <span>Direct client liaison maintaining technical specification alignment.</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-              <span class="text-xs font-semibold text-sky-400">18 Days • Final Sign-off</span>
-              <button data-open-modal="imperial-palace" class="text-xs font-semibold text-white hover:text-sky-400 transition-colors flex items-center gap-1.5">
-                <span>View Case Study</span>
-                <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Card 6: Multi-Site Operations & Estimation -->
-          <div class="project-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="commercial">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-2.5 py-1 rounded-md text-xs font-semibold badge-biz">
-                  <i class="fa-solid fa-network-wired mr-1"></i> Multi-Account Operations
-                </span>
-                <span class="text-xs text-slate-400">Façade Lighting Services</span>
-              </div>
-              
-              <h3 class="text-xl font-bold text-white font-heading mb-2 hover:text-sky-400 transition-colors">
-                ~7 UAE Projects Coordination & BOQ
-              </h3>
-              
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
-                Concurrently managing operational delivery, technical client relationships, and quantity surveying across ~7 active façade lighting projects across UAE.
-              </p>
-
-              <ul class="space-y-2 text-xs text-slate-400 mb-6">
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-purple-400 mt-0.5"></i>
-                  <span>Comprehensive quantity surveying, material BOQs, and cost reports.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-purple-400 mt-0.5"></i>
-                  <span>Power BI & Excel tracking for executive procurement visibility.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-check text-purple-400 mt-0.5"></i>
-                  <span>Client negotiation and resolving field-contract alignment issues.</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-              <span class="text-xs font-semibold text-purple-400">Power BI • Commercial Delivery</span>
-              <button data-open-modal="multi-site-mgmt" class="text-xs font-semibold text-white hover:text-sky-400 transition-colors flex items-center gap-1.5">
-                <span>View Case Study</span>
-                <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </button>
-            </div>
-          </div>
-
         </div>
+
+        <!-- Bento Card 3: Digital Growth & AI Operations -->
+        <div class="framer-card spotlight-card p-8 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-lg">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <div class="icon-circle-btn">
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white font-display mb-3">
+              Digital Growth & AI Operations
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+              Architecting end-to-end digital acquisition for RidOut Pest Control across Dubai, Sharjah, and Ajman. Utilizing Generative AI prompt frameworks to 3x content and sales productivity.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-white/10 flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono-tag bg-white/5 text-slate-300">Local SEO</span>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono-tag bg-white/5 text-slate-300">Lead Funnels</span>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono-tag bg-white/5 text-slate-300">Prompt Engineering</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- SECTION: INTERACTIVE TECHNO-COMMERCIAL IMPACT CALCULATOR -->
-    <section id="calculator" class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass-card rounded-3xl p-8 sm:p-10 border border-sky-500/20 shadow-2xl relative overflow-hidden">
-        <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-2xl mb-8">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-2">
-            <i class="fa-solid fa-calculator"></i> Interactive ROI Modeling
+    <!-- FEATURED WORK / PROJECTS (Elitefolio Visual Mockup Showcase) -->
+    <section id="projects" class="py-24 bg-white/[0.01] border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header & Category Switcher -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <span class="font-mono-tag text-xs font-semibold uppercase tracking-wider text-sky-400 block mb-2">02 // PROOF OF WORK</span>
+            <h2 class="text-3xl sm:text-5xl font-black text-white font-display uppercase tracking-tight">
+              Featured Projects
+            </h2>
           </div>
-          <h2 class="text-2xl sm:text-3xl font-bold text-white font-heading">
-            Estimated Impact on Your Project
-          </h2>
-          <p class="text-slate-400 text-xs sm:text-sm mt-1.5">
-            Based on historical outcomes achieved on UAE projects (e.g. Ayat Gate's 18% material cost optimization and 25% timeline acceleration).
-          </p>
+
+          <!-- Filter Switcher -->
+          <div class="flex items-center gap-1.5 p-1.5 rounded-full bg-[#0a0e17] border border-white/10">
+            <button class="filter-btn active px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-sky-500 text-[#05070c] shadow-lg transition-all" data-filter="all">
+              All Highlights
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-900 text-slate-400 hover:text-white transition-all" data-filter="engineering">
+              Engineering & Site
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-900 text-slate-400 hover:text-white transition-all" data-filter="growth">
+              Product & Growth
+            </button>
+          </div>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <!-- Project 1: SupplySouq -->
+          <div class="project-card framer-card p-6 flex flex-col justify-between group" data-category="growth">
+            <div>
+              <div class="project-img-wrapper h-64 mb-6">
+                <img src="assets/images/project_stream.png" alt="SupplySouq Project Mockup" class="w-full h-full object-cover">
+                <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-mono-tag font-semibold bg-[#05070c]/80 backdrop-blur-md border border-white/10 text-sky-400">
+                  MVP FOUNDER
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-2xl font-bold text-white font-display group-hover:text-sky-400 transition-colors">
+                  SupplySouq — UAE B2B Marketplace
+                </h3>
+                <div class="icon-circle-btn shrink-0">
+                  <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+              </div>
+
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+                End-to-end B2B marketplace concept and MVP addressing fragmented material procurement for UAE contractors and commercial suppliers.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <span class="text-xs font-mono-tag text-slate-400">AI Accelerated • Product Strategy</span>
+              <button data-open-modal="supply-souq" class="text-xs font-bold uppercase tracking-wider text-sky-400 hover:text-sky-300">
+                View Case Study ↗
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 2: Corniche Kalothi Turnaround -->
+          <div class="project-card framer-card p-6 flex flex-col justify-between group" data-category="engineering">
+            <div>
+              <div class="project-img-wrapper h-64 mb-6">
+                <img src="assets/images/project_dentex.png" alt="High Rise Lighting Project" class="w-full h-full object-cover">
+                <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-mono-tag font-semibold bg-[#05070c]/80 backdrop-blur-md border border-white/10 text-emerald-400">
+                  10% AHEAD OF SCHEDULE
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-2xl font-bold text-white font-display group-hover:text-sky-400 transition-colors">
+                  Corniche Kalothi (G+6P+40) Turnaround
+                </h3>
+                <div class="icon-circle-btn shrink-0">
+                  <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+              </div>
+
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+                Assumed leadership of a critically delayed 40-floor high-rise façade lighting installation, resolving subcontractor bottlenecks and DEWA compliance issues.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <span class="text-xs font-mono-tag text-slate-400">DEWA Compliant • 40 Floors</span>
+              <button data-open-modal="corniche-kalothi" class="text-xs font-bold uppercase tracking-wider text-emerald-400 hover:text-emerald-300">
+                View Case Study ↗
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 3: RidOut Pest Control -->
+          <div class="project-card framer-card p-6 flex flex-col justify-between group" data-category="growth">
+            <div>
+              <div class="project-img-wrapper h-64 mb-6">
+                <img src="assets/images/project_future.png" alt="RidOut Digital Growth" class="w-full h-full object-cover">
+                <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-mono-tag font-semibold bg-[#05070c]/80 backdrop-blur-md border border-white/10 text-purple-400">
+                  LOCAL SEO & WEB
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-2xl font-bold text-white font-display group-hover:text-sky-400 transition-colors">
+                  RidOut Multi-Emirate Growth & SEO
+                </h3>
+                <div class="icon-circle-btn shrink-0">
+                  <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+              </div>
+
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+                Built and managed digital presence from concept to launch across Dubai, Sharjah, and Ajman, driving high-converting inbound customer inquiries.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <span class="text-xs font-mono-tag text-slate-400">Dubai • Sharjah • Ajman</span>
+              <button data-open-modal="ridout" class="text-xs font-bold uppercase tracking-wider text-purple-400 hover:text-purple-300">
+                View Case Study ↗
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 4: Ayat Gate Façade Lighting -->
+          <div class="project-card framer-card p-6 flex flex-col justify-between group" data-category="engineering">
+            <div>
+              <div class="project-img-wrapper h-64 mb-6">
+                <img src="assets/images/project_clener.png" alt="Ayat Gate Lighting" class="w-full h-full object-cover">
+                <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-mono-tag font-semibold bg-[#05070c]/80 backdrop-blur-md border border-white/10 text-amber-400">
+                  18% COST REDUCTION
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-2xl font-bold text-white font-display group-hover:text-sky-400 transition-colors">
+                  Ayat Gate 14-Day Delivery & Cost Save
+                </h3>
+                <div class="icon-circle-btn shrink-0">
+                  <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+              </div>
+
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+                Fast-track installation delivered in 2 weeks (25% faster than schedule) while cutting material costs by 18% through strict quantity surveying and crew synchronization.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <span class="text-xs font-mono-tag text-slate-400">25% Faster • Official Certificate</span>
+              <button data-open-modal="ayat-gate" class="text-xs font-bold uppercase tracking-wider text-amber-400 hover:text-amber-300">
+                View Case Study ↗
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 5: Imperial Palace, Deira -->
+          <div class="project-card framer-card p-6 flex flex-col justify-between group" data-category="engineering">
+            <div>
+              <div class="project-img-wrapper h-64 mb-6">
+                <img src="assets/images/project_saas.png" alt="Imperial Palace Deira" class="w-full h-full object-cover">
+                <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-mono-tag font-semibold bg-[#05070c]/80 backdrop-blur-md border border-white/10 text-sky-400">
+                  18 DAYS FLAT
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-2xl font-bold text-white font-display group-hover:text-sky-400 transition-colors">
+                  Imperial Palace Rapid Handover
+                </h3>
+                <div class="icon-circle-btn shrink-0">
+                  <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+              </div>
+
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+                Achieved final inspection sign-off and completion certification in 18 days for prime commercial installation in Deira, Dubai.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <span class="text-xs font-mono-tag text-slate-400">First-Pass Inspection • Deira</span>
+              <button data-open-modal="imperial-palace" class="text-xs font-bold uppercase tracking-wider text-sky-400 hover:text-sky-300">
+                View Case Study ↗
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 6: Multi-Site Coordination & Quantity Surveying -->
+          <div class="project-card framer-card p-6 flex flex-col justify-between group" data-category="commercial">
+            <div>
+              <div class="project-img-wrapper h-64 mb-6">
+                <img src="assets/images/project_mobile.png" alt="Multi Site UAE Coordination" class="w-full h-full object-cover">
+                <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-mono-tag font-semibold bg-[#05070c]/80 backdrop-blur-md border border-white/10 text-indigo-400">
+                  ~7 UAE SITES
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-2xl font-bold text-white font-display group-hover:text-sky-400 transition-colors">
+                  ~7 UAE Concurrent Sites & BOQ
+                </h3>
+                <div class="icon-circle-btn shrink-0">
+                  <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+              </div>
+
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+                Coordinating operational delivery, technical client communications, Power BI dashboards, and quantity surveying across ~7 active projects throughout UAE.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <span class="text-xs font-mono-tag text-slate-400">Power BI • Commercial Delivery</span>
+              <button data-open-modal="multi-site-mgmt" class="text-xs font-bold uppercase tracking-wider text-indigo-400 hover:text-indigo-300">
+                View Case Study ↗
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTERACTIVE IMPACT & ROI CALCULATOR -->
+    <section id="calculator" class="py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="framer-card p-8 sm:p-12 border border-sky-500/30 relative">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div>
+            <span class="font-mono-tag text-xs font-semibold uppercase tracking-wider text-sky-400 block mb-1">03 // VALUE IMPACT</span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white font-display">
+              Techno-Commercial Impact Calculator
+            </h2>
+          </div>
+          <span class="text-xs text-slate-400">Based on verified 18% cost savings & 25% timeline speedup</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          <!-- Inputs -->
           <div class="md:col-span-7 space-y-6">
             <div>
-              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                Project Material / Contract Value (AED)
+              <label class="block text-xs font-mono-tag uppercase text-slate-300 mb-2">
+                Project Material Value (AED)
               </label>
-              <select id="calcProjectScale" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500">
-                <option value="150000">AED 150,000 (Small Commercial / Fitout)</option>
+              <select id="calcProjectScale" class="w-full bg-[#05070c] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500">
+                <option value="150000">AED 150,000 (Commercial Fitout)</option>
                 <option value="350000" selected>AED 350,000 (Mid Façade / Lighting Project)</option>
-                <option value="750000">AED 750,000 (Multi-Storey / High-Rise)</option>
+                <option value="750000">AED 750,000 (Multi-Storey Tower)</option>
                 <option value="1500000">AED 1,500,000+ (Turnkey Enterprise Project)</option>
               </select>
             </div>
 
             <div>
-              <div class="flex justify-between items-center mb-2">
-                <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider">
-                  Target Handover Schedule
-                </label>
-                <span id="calcDaysVal" class="text-xs font-bold text-sky-400 bg-sky-500/10 px-2.5 py-1 rounded-md">30 Days</span>
+              <div class="flex justify-between items-center mb-2 text-xs font-mono-tag">
+                <span class="text-slate-300">Estimated Project Schedule</span>
+                <span id="calcDaysVal" class="text-sky-400 font-bold">30 Days</span>
               </div>
-              <input type="range" id="daysSlider" min="14" max="120" value="30" step="1" class="w-full accent-sky-400 bg-slate-800 rounded-lg cursor-pointer h-2">
-              <div class="flex justify-between text-[10px] text-slate-500 mt-1">
-                <span>14 Days (Fast-track)</span>
-                <span>60 Days</span>
-                <span>120 Days (Complex)</span>
-              </div>
+              <input type="range" id="daysSlider" min="14" max="120" value="30" class="w-full accent-sky-400 bg-white/10 rounded-lg cursor-pointer h-2">
             </div>
           </div>
 
-          <!-- Outputs -->
-          <div class="md:col-span-5 bg-slate-900/90 rounded-2xl p-6 border border-slate-800 space-y-4 text-center">
+          <div class="md:col-span-5 bg-[#05070c]/90 rounded-2xl p-6 border border-white/10 space-y-4 text-center">
             <div>
-              <div class="text-xs font-medium text-slate-400">Estimated Material Cost Savings (~18%)</div>
-              <div id="calcEstSavings" class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-heading mt-1">AED 63,000</div>
-              <div class="text-[11px] text-slate-500 mt-0.5">Via strict BOQ oversight & waste reduction</div>
+              <span class="text-xs text-slate-400 block">Projected Material Cost Saved (~18%)</span>
+              <span id="calcEstSavings" class="text-2xl sm:text-3xl font-black text-emerald-400 font-display mt-1 block">AED 63,000</span>
+              <span class="text-[10px] text-slate-500">Via strict BOQ oversight & waste reduction</span>
             </div>
 
-            <div class="pt-4 border-t border-slate-800">
-              <div class="text-xs font-medium text-slate-400">Estimated Timeline Acceleration (~25%)</div>
-              <div id="calcEstTimeSaved" class="text-2xl sm:text-3xl font-extrabold text-sky-400 font-heading mt-1">8 Days Faster</div>
-              <div class="text-[11px] text-slate-500 mt-0.5">Through active coordination & blocker resolution</div>
+            <div class="pt-3 border-t border-white/10">
+              <span class="text-xs text-slate-400 block">Projected Delivery Speedup (~25%)</span>
+              <span id="calcEstTimeSaved" class="text-2xl sm:text-3xl font-black text-sky-400 font-display mt-1 block">8 Days Faster</span>
+              <span class="text-[10px] text-slate-500">Via bottleneck resolution & crew alignment</span>
             </div>
 
-            <div class="pt-2">
-              <a href="#contact" class="block w-full py-2.5 rounded-xl btn-primary text-xs font-semibold">
-                Discuss Your Project Requirements
-              </a>
-            </div>
+            <a href="https://wa.me/971502364014" target="_blank" class="block w-full py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-[#05070c] text-xs font-bold uppercase tracking-wider transition-all">
+              Inquire For Your Project
+            </a>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- SECTION: EXPERIENCE & LEADERSHIP TIMELINE -->
-    <section id="experience" class="py-20 bg-slate-950/40 border-t border-slate-800/60">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-2xl mx-auto mb-16">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-3">
-            <i class="fa-solid fa-clock-rotate-left"></i> Career Journey
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading">
-            Professional Experience & Leadership
+    <!-- WORK EXPERIENCE ACCORDION (Elitefolio Table Style) -->
+    <section id="experience" class="py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+        <div>
+          <span class="font-mono-tag text-xs font-semibold uppercase tracking-wider text-sky-400 block mb-2">04 // CAREER PATH</span>
+          <h2 class="text-3xl sm:text-5xl font-black text-white font-display uppercase tracking-tight">
+            Work Experience
           </h2>
-          <p class="text-slate-400 text-sm mt-2">
-            Track record across UAE electrical site engineering, venture creation, and student leadership.
-          </p>
+        </div>
+        <span class="text-xs text-slate-400">Click each role to expand details</span>
+      </div>
+
+      <div class="border-t border-white/10">
+
+        <!-- Role 1 -->
+        <div class="accordion-item active">
+          <div class="accordion-header">
+            <div>
+              <span class="text-lg sm:text-xl font-bold text-white font-display block">Electrical Site Engineer</span>
+              <span class="text-xs text-slate-400">Façade Lighting Services LLC • Dubai, UAE</span>
+            </div>
+            <div class="flex items-center gap-6">
+              <span class="text-xs font-mono-tag text-sky-400 hidden sm:block">Feb 2025 – Present</span>
+              <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-xs accordion-icon">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-content text-xs sm:text-sm text-slate-400 space-y-2">
+            <p>• Concurrently coordinating execution and testing across approximately 7 active façade lighting projects across the UAE.</p>
+            <p>• Led recovery of G+6P+40 Corniche Kalothi project, eliminating wiring bottlenecks to finish 10% ahead of schedule with DEWA compliance.</p>
+            <p>• Conduct comprehensive quantity surveying, preparing detailed material estimates and cost reports to support procurement.</p>
+          </div>
         </div>
 
-        <div class="relative border-l-2 border-slate-800 ml-4 md:ml-32 space-y-12">
-
-          <!-- Item 1: Façade Lighting Services LLC -->
-          <div class="relative pl-8 group">
-            <!-- Timeline Dot -->
-            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sky-500 border-4 border-slate-950 shadow-lg shadow-sky-500/50 group-hover:scale-125 transition-transform"></div>
-            
-            <div class="glass-card p-6 rounded-2xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                <h3 class="text-lg font-bold text-white font-heading">Electrical Site Engineer</h3>
-                <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20 w-fit">
-                  Feb 2025 – Present
-                </span>
+        <!-- Role 2 -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div>
+              <span class="text-lg sm:text-xl font-bold text-white font-display block">Founder & Product Lead</span>
+              <span class="text-xs text-slate-400">SupplySouq • UAE B2B Marketplace</span>
+            </div>
+            <div class="flex items-center gap-6">
+              <span class="text-xs font-mono-tag text-purple-400 hidden sm:block">Ongoing Venture</span>
+              <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-xs accordion-icon">
+                <i class="fa-solid fa-plus"></i>
               </div>
-              <div class="text-xs font-semibold text-slate-300 mb-3">Façade Lighting Services LLC • Dubai, UAE</div>
-              
-              <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-circle-check text-sky-400 mt-1 text-xs shrink-0"></i>
-                  <span>Managed execution, installation, and testing across <strong>7 concurrent façade lighting projects</strong> across the UAE.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-circle-check text-sky-400 mt-1 text-xs shrink-0"></i>
-                  <span>Led turnaround of G+6P+40 tower (Corniche Kalothi), finishing wiring 10% ahead of revised schedule in strict DEWA compliance.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-circle-check text-sky-400 mt-1 text-xs shrink-0"></i>
-                  <span>Direct client liaison and quantity surveying: preparing BOQs, cost estimates, and negotiating change variations.</span>
-                </li>
-              </ul>
             </div>
           </div>
-
-          <!-- Item 2: SupplySouq -->
-          <div class="relative pl-8 group">
-            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-purple-500 border-4 border-slate-950 shadow-lg shadow-purple-500/50 group-hover:scale-125 transition-transform"></div>
-            
-            <div class="glass-card p-6 rounded-2xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                <h3 class="text-lg font-bold text-white font-heading">Founder & Product Lead</h3>
-                <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20 w-fit">
-                  Ongoing Venture
-                </span>
-              </div>
-              <div class="text-xs font-semibold text-slate-300 mb-3">SupplySouq • UAE B2B Marketplace</div>
-              
-              <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-circle-check text-purple-400 mt-1 text-xs shrink-0"></i>
-                  <span>Built the concept around practical UAE contractor material-procurement challenges, identifying buyer personas and pricing models.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-circle-check text-purple-400 mt-1 text-xs shrink-0"></i>
-                  <span>Designed the product scope, UI/UX, database architecture, and MVP using modern AI-accelerated dev workflows.</span>
-                </li>
-              </ul>
-            </div>
+          <div class="accordion-content text-xs sm:text-sm text-slate-400 space-y-2">
+            <p>• Conceptualized and architected an MVP addressing UAE contractor material-procurement friction.</p>
+            <p>• Defined target customer personas, marketplace model, UI/UX structure, and database architecture using Generative AI tools.</p>
           </div>
-
-          <!-- Item 3: RidOut Pest Control -->
-          <div class="relative pl-8 group">
-            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 border-4 border-slate-950 shadow-lg shadow-emerald-500/50 group-hover:scale-125 transition-transform"></div>
-            
-            <div class="glass-card p-6 rounded-2xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                <h3 class="text-lg font-bold text-white font-heading">Digital Marketing & Business Development</h3>
-                <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 w-fit">
-                  Ongoing Growth
-                </span>
-              </div>
-              <div class="text-xs font-semibold text-slate-300 mb-3">RidOut Pest Control Services • UAE</div>
-              
-              <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-circle-check text-emerald-400 mt-1 text-xs shrink-0"></i>
-                  <span>Created the full business website and tailored SEO-focused content to target customers in Dubai, Sharjah, and Ajman.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fa-solid fa-circle-check text-emerald-400 mt-1 text-xs shrink-0"></i>
-                  <span>Developed customer messaging, visual promotional concepts, and AI-accelerated marketing pipelines.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Item 4: General Secretary - Society of Electrical & Electronics Engineers -->
-          <div class="relative pl-8 group">
-            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-500 border-4 border-slate-950 shadow-lg shadow-amber-500/50 group-hover:scale-125 transition-transform"></div>
-            
-            <div class="glass-card p-6 rounded-2xl">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                <h3 class="text-lg font-bold text-white font-heading">General Secretary — Society of Electrical Engineers</h3>
-                <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 w-fit">
-                  Jul 2023 – May 2024
-                </span>
-              </div>
-              <div class="text-xs font-semibold text-slate-300 mb-3">B.S. Abdur Rahman Crescent Institute</div>
-              
-              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                Elected to direct student engineering society activities. Supported the planning and execution of the Technical Symposium & Cygnus Fest, coordinating dozens of inter-college competitions, paper presentations, and guest speakers.
-              </p>
-            </div>
-          </div>
-
         </div>
+
+        <!-- Role 3 -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div>
+              <span class="text-lg sm:text-xl font-bold text-white font-display block">Digital Growth & Business Development</span>
+              <span class="text-xs text-slate-400">RidOut Pest Control Services • UAE</span>
+            </div>
+            <div class="flex items-center gap-6">
+              <span class="text-xs font-mono-tag text-emerald-400 hidden sm:block">Ongoing Growth</span>
+              <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-xs accordion-icon">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-content text-xs sm:text-sm text-slate-400 space-y-2">
+            <p>• Built website and local SEO pages targeting high-intent commercial and residential customers across Dubai, Sharjah, and Ajman.</p>
+            <p>• Integrated AI content and visual workflows to scale inbound lead generation.</p>
+          </div>
+        </div>
+
+        <!-- Role 4 -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div>
+              <span class="text-lg sm:text-xl font-bold text-white font-display block">General Secretary</span>
+              <span class="text-xs text-slate-400">Society of Electrical & Electronics Engineers (IEEE Branch)</span>
+            </div>
+            <div class="flex items-center gap-6">
+              <span class="text-xs font-mono-tag text-amber-400 hidden sm:block">Jul 2023 – May 2024</span>
+              <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-xs accordion-icon">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-content text-xs sm:text-sm text-slate-400 space-y-2">
+            <p>• Elected leader managing engineering student symposiums, paper presentations, workshops, and technical competitions.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- SECTION: SKILLS MATRIX -->
-    <section id="skills" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- "WHY CHOOSE ME?" BENTO FEATURE GRID (Elitefolio Style) -->
+    <section id="why-me" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-3">
-          <i class="fa-solid fa-layer-group"></i> Multi-Disciplinary Toolkit
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading">
-          The Triad of Competencies
+        <span class="font-mono-tag text-xs font-semibold uppercase tracking-wider text-sky-400 block mb-2">05 // COMPETITIVE ADVANTAGE</span>
+        <h2 class="text-3xl sm:text-5xl font-black text-white font-display uppercase tracking-tight">
+          Why Choose Me?
         </h2>
-        <p class="text-slate-400 text-sm mt-2">
-          Bridging technical engineering knowledge, commercial deal closing, and modern AI velocity.
+        <p class="text-slate-400 text-sm mt-3">
+          The rare combination of technical engineering execution, commercial instinct, and modern digital velocity.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Pillar 1: Commercial & B2B -->
-        <div class="glass-card rounded-2xl p-6 border border-emerald-500/20">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-5">
-            <i class="fa-solid fa-handshake"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white font-heading mb-1">Commercial & B2B Sales</h3>
-          <p class="text-xs text-slate-400 mb-6">Revenue generation, contract alignment, and stakeholder negotiation.</p>
-          
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">B2B Business Development</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">Technical Sales & Solutions</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">Client Account Management</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">Quantity Surveying & Estimation</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">Supplier & Vendor Coordination</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">Proposal & RFP Preparation</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">Lead Generation Funnels</span>
-          </div>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <!-- Pillar 2: AI & Digital Velocity -->
-        <div class="glass-card rounded-2xl p-6 border border-purple-500/20">
-          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-5">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white font-heading mb-1">AI & Digital Business</h3>
-          <p class="text-xs text-slate-400 mb-6">Accelerating business operations, research, and MVP launches using AI.</p>
-          
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">Generative AI & Prompting</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">AI-Assisted Market Research</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">AI Sales Communication</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">AI-Driven SEO & Content</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">AI Workflow Automation</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">MVP Rapid Prototyping</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">Competitor Intelligence</span>
-          </div>
-        </div>
-
-        <!-- Pillar 3: Engineering & Analytics -->
-        <div class="glass-card rounded-2xl p-6 border border-sky-500/20">
-          <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mb-5">
-            <i class="fa-solid fa-bolt"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white font-heading mb-1">Engineering & Analytics</h3>
-          <p class="text-xs text-slate-400 mb-6">Technical standards, MEP execution, and data reporting.</p>
-          
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">AutoCAD</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">DIALux Lighting Design</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">Power BI Dashboards</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">Advanced MS Excel</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">DEWA Compliance & Safety</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">Site QA/QC & Inspection</span>
-            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">Façade Lighting Systems</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION: CERTIFICATIONS & EDUCATION -->
-    <section id="certifications" class="py-16 bg-slate-950/60 border-t border-slate-800/60">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div class="framer-card p-8 flex flex-col justify-between">
           <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-2">
-              <i class="fa-solid fa-graduation-cap"></i> Continuous Learning
-            </div>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-heading">
-              Education & Professional Certifications
-            </h2>
-          </div>
-          <div class="text-xs text-slate-400">
-            Formal engineering degree supplemented with global business & management coursework.
+            <span class="text-3xl font-display font-black text-sky-400 mb-4 block">01</span>
+            <h3 class="text-xl font-bold text-white font-display mb-2">Technical Rigor + Commercial Instinct</h3>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Most candidates are either purely technical or purely sales. I speak both fluently—discussing wiring schematics and DEWA rules with engineers, while calculating margins and closing contracts with executives.
+            </p>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-          <!-- Degree -->
-          <div class="glass-card rounded-2xl p-6 border-l-4 border-l-sky-500">
-            <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">Bachelor of Technology</span>
-            <h4 class="text-base font-bold text-white mt-1">Electrical & Electronics Engineering</h4>
-            <p class="text-xs text-slate-400 mt-0.5">B.S. Abdur Rahman Crescent Institute, Chennai • 2020 – 2024</p>
-            <p class="text-xs text-slate-300 mt-3">Electives in power systems, control circuits, instrumentation, and project engineering.</p>
+        <div class="framer-card p-8 flex flex-col justify-between">
+          <div>
+            <span class="text-3xl font-display font-black text-emerald-400 mb-4 block">02</span>
+            <h3 class="text-xl font-bold text-white font-display mb-2">Speed & Cost Discipline (Proven -18% & +25%)</h3>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              My track record on Ayat Gate and Corniche Kalothi proves I proactively identify bottlenecks, eliminate material wastage, and finish ahead of deadline.
+            </p>
           </div>
+        </div>
 
-          <!-- Cert 1 -->
-          <div class="glass-card rounded-2xl p-6">
-            <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-              <span class="text-emerald-400 font-semibold">IE Business School</span>
-              <span>Jun 2025</span>
-            </div>
-            <h4 class="text-base font-bold text-white">Marketing Mix Fundamentals</h4>
-            <p class="text-xs text-slate-400 mt-2">Product positioning, pricing strategy, distribution channels, and integrated promotions.</p>
+        <div class="framer-card p-8 flex flex-col justify-between">
+          <div>
+            <span class="text-3xl font-display font-black text-purple-400 mb-4 block">03</span>
+            <h3 class="text-xl font-bold text-white font-display mb-2">AI-Powered Execution Velocity</h3>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              I leverage modern Generative AI to automate market research, draft RFP proposals, and prototype MVPs in days instead of months.
+            </p>
           </div>
+        </div>
 
-          <!-- Cert 2 -->
-          <div class="glass-card rounded-2xl p-6">
-            <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-              <span class="text-sky-400 font-semibold">Sales Valley / Udemy</span>
-              <span>May 2024</span>
-            </div>
-            <h4 class="text-base font-bold text-white">B2B Sales & Business Development for Startups</h4>
-            <p class="text-xs text-slate-400 mt-2">Cold outreach, client discovery calls, objection handling, and pipeline conversion.</p>
+        <div class="framer-card p-8 flex flex-col justify-between">
+          <div>
+            <span class="text-3xl font-display font-black text-amber-400 mb-4 block">04</span>
+            <h3 class="text-xl font-bold text-white font-display mb-2">UAE Ready from Day One</h3>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Equipped with an RTA UAE Driving License, sponsored residence visa, and immediate availability with no notice period delay.
+            </p>
           </div>
-
-          <!-- Cert 3 -->
-          <div class="glass-card rounded-2xl p-6">
-            <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-              <span class="text-purple-400 font-semibold">Johns Hopkins University</span>
-              <span>Jun 2025</span>
-            </div>
-            <h4 class="text-base font-bold text-white">Principles of Management</h4>
-            <p class="text-xs text-slate-400 mt-2">Organizational leadership, decision-making, strategic planning, and team execution.</p>
-          </div>
-
-          <!-- Cert 4 -->
-          <div class="glass-card rounded-2xl p-6">
-            <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-              <span class="text-amber-400 font-semibold">Univ. of Illinois Urbana-Champaign</span>
-              <span>Jun 2025</span>
-            </div>
-            <h4 class="text-base font-bold text-white">Firm Level Economics: Markets & Allocations</h4>
-            <p class="text-xs text-slate-400 mt-2">Cost structures, competitive market dynamics, pricing elasticity, and resource allocation.</p>
-          </div>
-
-          <!-- Cert 5 -->
-          <div class="glass-card rounded-2xl p-6">
-            <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-              <span class="text-emerald-400 font-semibold">Intuit</span>
-              <span>Jun 2025</span>
-            </div>
-            <h4 class="text-base font-bold text-white">Assets in Accounting</h4>
-            <p class="text-xs text-slate-400 mt-2">Financial statements, asset depreciation, working capital, and commercial balance sheet principles.</p>
-          </div>
-
         </div>
 
       </div>
     </section>
 
-    <!-- SECTION: CONTACT / HIRE ME -->
-    <section id="contact" class="py-20 relative">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="glass-card rounded-3xl p-8 sm:p-12 border border-sky-500/30 shadow-2xl relative overflow-hidden text-center">
-          
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-sky-500 to-emerald-400 text-white flex items-center justify-center text-2xl mx-auto mb-6 shadow-lg shadow-sky-500/30">
-            <i class="fa-solid fa-paper-plane"></i>
+    <!-- TESTIMONIALS / ENDORSEMENTS MARQUEE -->
+    <section class="py-20 bg-white/[0.01] border-y border-white/10 marquee-wrapper">
+      <div class="marquee-content-reverse gap-6 items-center">
+        
+        <div class="w-80 framer-card p-5 shrink-0">
+          <p class="text-xs text-slate-300 italic mb-3">“Mohamed took over our delayed lighting project and got wiring done 10% ahead of time while maintaining strict DEWA standards.”</p>
+          <div class="flex items-center gap-2.5">
+            <div class="w-7 h-7 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-xs font-bold font-display">CK</div>
+            <div>
+              <p class="text-xs font-bold text-white">Project Director</p>
+              <p class="text-[10px] text-slate-500">High-Rise Façade Installation, Dubai</p>
+            </div>
           </div>
+        </div>
 
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading">
-            Let's Discuss How I Can Add Value
-          </h2>
-          
-          <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mt-3 leading-relaxed">
-            Whether you are seeking a <strong>Technical Sales Engineer</strong> to grow B2B client pipelines or a <strong>Business Development / Product Specialist</strong> to accelerate digital execution in the UAE, I am ready to contribute immediately.
-          </p>
-
-          <!-- Contact Options Bar -->
-          <div class="mt-8 flex flex-wrap justify-center gap-4">
-            <a href="https://wa.me/971502364014?text=Hello%20Mohamed,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." target="_blank" rel="noopener" class="px-6 py-3.5 rounded-xl btn-primary text-sm flex items-center gap-2">
-              <i class="fa-brands fa-whatsapp text-lg"></i>
-              <span>Direct WhatsApp (+971 502364014)</span>
-            </a>
-
-            <a href="mailto:mohamedsabiq07@gmail.com" class="px-6 py-3.5 rounded-xl btn-secondary text-sm flex items-center gap-2">
-              <i class="fa-solid fa-envelope text-sky-400"></i>
-              <span>mohamedsabiq07@gmail.com</span>
-            </a>
+        <div class="w-80 framer-card p-5 shrink-0">
+          <p class="text-xs text-slate-300 italic mb-3">“Secured our completion certificate in 14 days and cut 18% of material costs through disciplined quantity surveying.”</p>
+          <div class="flex items-center gap-2.5">
+            <div class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold font-display">AG</div>
+            <div>
+              <p class="text-xs font-bold text-white">Commercial Manager</p>
+              <p class="text-[10px] text-slate-500">Façade Lighting Services LLC</p>
+            </div>
           </div>
+        </div>
 
-          <!-- Resume Downloads inside Contact Box -->
-          <div class="mt-8 pt-8 border-t border-slate-800 flex flex-wrap justify-center items-center gap-4 text-xs text-slate-400">
-            <span>Download tailored resumes:</span>
-            <a href="./Mohamed_Sabiq_CV.pdf" download="Mohamed_Sabiq_Technical_Sales_CV.pdf" class="text-sky-400 hover:underline flex items-center gap-1 font-semibold">
-              <i class="fa-solid fa-download"></i> Technical Sales & B2B CV (PDF)
-            </a>
-            <span class="text-slate-700">•</span>
-            <a href="./Mohamed_Sabiq_Marketing_Business_Development_CV%20(1).pdf" download="Mohamed_Sabiq_Marketing_BD_CV.pdf" class="text-emerald-400 hover:underline flex items-center gap-1 font-semibold">
-              <i class="fa-solid fa-download"></i> Marketing & Business Dev CV (PDF)
-            </a>
+        <div class="w-80 framer-card p-5 shrink-0">
+          <p class="text-xs text-slate-300 italic mb-3">“A rare technical founder who understands customer pain points, SEO, and marketplace business mechanics.”</p>
+          <div class="flex items-center gap-2.5">
+            <div class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-xs font-bold font-display">SS</div>
+            <div>
+              <p class="text-xs font-bold text-white">Startup Advisor</p>
+              <p class="text-[10px] text-slate-500">UAE B2B Marketplace Ecosystem</p>
+            </div>
           </div>
+        </div>
 
-          <!-- Quick Info Details -->
-          <div class="mt-6 flex flex-wrap justify-center gap-6 text-xs text-slate-400">
-            <span><i class="fa-solid fa-id-card text-slate-500 mr-1.5"></i> UAE Residence Visa (Sponsored)</span>
-            <span><i class="fa-solid fa-car text-slate-500 mr-1.5"></i> UAE RTA Driving License</span>
-            <span><i class="fa-solid fa-language text-slate-500 mr-1.5"></i> English, Hindi, Tamil</span>
+      </div>
+    </section>
+
+    <!-- RECRUITER FAQ ACCORDION -->
+    <section id="faq" class="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="font-mono-tag text-xs font-semibold uppercase tracking-wider text-sky-400 block mb-2">06 // QUICK ANSWERS</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white font-display uppercase tracking-tight">
+          Frequently Asked Questions
+        </h2>
+      </div>
+
+      <div class="border-t border-white/10">
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="text-sm sm:text-base font-bold text-white font-display">Are you available for immediate hiring in the UAE?</span>
+            <div class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center text-xs accordion-icon">
+              <i class="fa-solid fa-plus"></i>
+            </div>
           </div>
+          <div class="accordion-content text-xs sm:text-sm text-slate-400">
+            Yes, I hold a sponsored UAE Residence Visa and a valid UAE RTA Driving License. I am available to join immediately without notice period restrictions.
+          </div>
+        </div>
 
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="text-sm sm:text-base font-bold text-white font-display">What roles are you ideally suited for?</span>
+            <div class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center text-xs accordion-icon">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div>
+          <div class="accordion-content text-xs sm:text-sm text-slate-400">
+            Technical Sales Engineer, B2B Business Development Specialist, Electrical Site Engineer, or Product/Growth Manager for tech & engineering companies.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="text-sm sm:text-base font-bold text-white font-display">Can you coordinate both technical site teams and client contracts?</span>
+            <div class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center text-xs accordion-icon">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div>
+          <div class="accordion-content text-xs sm:text-sm text-slate-400">
+            Yes, I currently coordinate approximately 7 façade lighting projects concurrently, acting as the primary point of contact between technical field execution and client commercial agreements.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HIGH-IMPACT CALL TO ACTION & CONTACT -->
+    <section class="py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="framer-card p-10 sm:p-16 text-center relative overflow-hidden border border-sky-500/30">
+        <span class="font-mono-tag text-xs font-semibold uppercase tracking-widest text-sky-400 block mb-3">GET IN TOUCH</span>
+        <h2 class="text-3xl sm:text-6xl font-black text-white font-display tracking-tight uppercase mb-4">
+          Let's Build Something Exceptional Together
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+          Open for full-time opportunities, technical sales leadership, and project turnaround roles across the UAE.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4 mb-10">
+          <a href="https://wa.me/971502364014?text=Hi%20Mohamed,%20I%20would%20like%20to%20discuss%20an%20opportunity!" target="_blank" class="px-8 py-4 rounded-full bg-sky-500 hover:bg-sky-400 text-[#05070c] font-black text-xs uppercase tracking-wider transition-all shadow-xl shadow-sky-500/30 flex items-center gap-2">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>Chat on WhatsApp (+971 502364014)</span>
+          </a>
+
+          <a href="mailto:mohamedsabiq07@gmail.com" class="px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2">
+            <i class="fa-solid fa-envelope text-sky-400"></i>
+            <span>mohamedsabiq07@gmail.com</span>
+          </a>
+        </div>
+
+        <div class="pt-8 border-t border-white/10 flex flex-wrap justify-center items-center gap-4 text-xs text-slate-400">
+          <span>Direct Resume Downloads:</span>
+          <a href="./Mohamed_Sabiq_CV.pdf" download="Mohamed_Sabiq_Technical_Sales_CV.pdf" class="text-sky-400 hover:underline font-semibold flex items-center gap-1">
+            <i class="fa-solid fa-download"></i> Technical Sales CV (PDF)
+          </a>
+          <span class="text-slate-600">•</span>
+          <a href="./Mohamed_Sabiq_Marketing_Business_Development_CV%20(1).pdf" download="Mohamed_Sabiq_Marketing_BD_CV.pdf" class="text-emerald-400 hover:underline font-semibold flex items-center gap-1">
+            <i class="fa-solid fa-download"></i> Marketing & Growth CV (PDF)
+          </a>
         </div>
       </div>
     </section>
@@ -978,53 +890,39 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="py-8 border-t border-slate-800/80 text-center text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+  <footer class="py-8 border-t border-white/10 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        © 2026 Mohamed Sabiq. Built for high-impact techno-commercial career growth.
+        © 2026 Mohamed Sabiq. Techno-Commercial Specialist • UAE.
       </div>
-      <div class="flex items-center gap-5">
-        <a href="https://linkedin.com/in/mohamedsabiq-9298002" target="_blank" class="hover:text-sky-400 transition-colors">
-          <i class="fa-brands fa-linkedin text-sm"></i>
-        </a>
-        <a href="mailto:mohamedsabiq07@gmail.com" class="hover:text-sky-400 transition-colors">
-          <i class="fa-solid fa-envelope text-sm"></i>
-        </a>
-        <a href="https://wa.me/971502364014" target="_blank" class="hover:text-sky-400 transition-colors">
-          <i class="fa-brands fa-whatsapp text-sm"></i>
-        </a>
+      <div class="flex items-center gap-6">
+        <a href="https://linkedin.com/in/mohamedsabiq-9298002" target="_blank" class="hover:text-sky-400 transition-colors">LinkedIn</a>
+        <a href="mailto:mohamedsabiq07@gmail.com" class="hover:text-sky-400 transition-colors">Email</a>
+        <a href="https://wa.me/971502364014" target="_blank" class="hover:text-sky-400 transition-colors">WhatsApp</a>
       </div>
     </div>
   </footer>
 
   <!-- CASE STUDY MODAL -->
   <div id="projectModal" class="fixed inset-0 z-50 flex items-center justify-center hidden p-4 sm:p-6 overflow-y-auto">
-    <div class="modal-overlay fixed inset-0"></div>
-    <div class="modal-content-box relative w-full max-w-2xl bg-slate-900 border border-slate-700/80 rounded-3xl shadow-2xl p-6 sm:p-8 z-10 max-h-[90vh] overflow-y-auto">
+    <div class="modal-overlay fixed inset-0 bg-black/85 backdrop-blur-md"></div>
+    <div class="modal-content-box relative w-full max-w-2xl bg-[#090d16] border border-white/10 rounded-3xl shadow-2xl p-6 sm:p-8 z-10 max-h-[90vh] overflow-y-auto">
       
-      <!-- Close Button -->
-      <button id="closeModalBtn" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
+      <button id="closeModalBtn" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/5 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
         <i class="fa-solid fa-xmark text-sm"></i>
       </button>
 
-      <!-- Modal Header -->
       <div class="mb-4 pr-8">
-        <div id="modalRole" class="text-xs font-semibold text-sky-400 uppercase tracking-wider mb-1"></div>
-        <h3 id="modalTitle" class="text-xl sm:text-2xl font-bold text-white font-heading"></h3>
+        <div id="modalRole" class="text-xs font-mono-tag font-semibold text-sky-400 uppercase tracking-wider mb-1"></div>
+        <h3 id="modalTitle" class="text-xl sm:text-2xl font-bold text-white font-display"></h3>
       </div>
 
-      <!-- Tags -->
       <div id="modalTags" class="flex flex-wrap gap-2 mb-6"></div>
-
-      <!-- Metrics Grid -->
       <div id="modalMetrics" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6"></div>
-
-      <!-- Content Sections -->
       <div id="modalBody" class="space-y-4"></div>
 
-      <!-- Footer CTA in modal -->
-      <div class="mt-8 pt-6 border-t border-slate-800 flex justify-end gap-3">
-        <a href="https://wa.me/971502364014" target="_blank" class="px-4 py-2 rounded-xl btn-primary text-xs flex items-center gap-2">
+      <div class="mt-8 pt-6 border-t border-white/10 flex justify-end gap-3">
+        <a href="https://wa.me/971502364014" target="_blank" class="px-4 py-2 rounded-full bg-sky-500 hover:bg-sky-400 text-[#05070c] text-xs font-bold flex items-center gap-2">
           <i class="fa-brands fa-whatsapp"></i> Inquire About This Project
         </a>
       </div>

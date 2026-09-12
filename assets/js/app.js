@@ -1,5 +1,6 @@
 /**
- * Mohamed Sabiq Portfolio - Interactive Application Logic
+ * Mohamed Sabiq Portfolio - Elitefolio Interactive Animations & App Logic
+ * Inspired by elittefolio.framer.website
  */
 
 // Case Study Data for Modal Deep Dives
@@ -160,27 +161,151 @@ const caseStudies = {
   }
 };
 
-// Document Ready Setup
 document.addEventListener('DOMContentLoaded', () => {
+  initCustomCursor();
+  initScrollReveal();
+  initBentoCardTiltAndSpotlight();
+  initAccordions();
   setupFilterTabs();
   setupModalHandlers();
   setupMobileMenu();
   setupInteractiveCalculator();
 });
 
-// Category Filter Setup
+// 1. Interactive Magnetic Cursor & Glow Follower
+function initCustomCursor() {
+  const cursor = document.querySelector('.custom-cursor');
+  const follower = document.querySelector('.custom-cursor-follower');
+  if (!cursor || !follower) return;
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let followerX = mouseX;
+  let followerY = mouseY;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = `${mouseX}px`;
+    cursor.style.top = `${mouseY}px`;
+  });
+
+  // Smooth lerp for follower
+  function animateFollower() {
+    followerX += (mouseX - followerX) * 0.18;
+    followerY += (mouseY - followerY) * 0.18;
+    follower.style.left = `${followerX}px`;
+    follower.style.top = `${followerY}px`;
+    requestAnimationFrame(animateFollower);
+  }
+  requestAnimationFrame(animateFollower);
+
+  // Hover expansion on interactive elements
+  const hoverTargets = document.querySelectorAll('a, button, .framer-card, .project-card, .accordion-header, select, input');
+  hoverTargets.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.width = '24px';
+      cursor.style.height = '24px';
+      cursor.style.backgroundColor = 'rgba(56, 189, 248, 0.4)';
+      follower.style.width = '64px';
+      follower.style.height = '64px';
+      follower.style.borderColor = 'rgba(56, 189, 248, 0.8)';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.width = '10px';
+      cursor.style.height = '10px';
+      cursor.style.backgroundColor = '#38bdf8';
+      follower.style.width = '38px';
+      follower.style.height = '38px';
+      follower.style.borderColor = 'rgba(56, 189, 248, 0.4)';
+    });
+  });
+}
+
+// 2. Framer-style Scroll Reveal with IntersectionObserver
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.reveal-init');
+  if (!revealElements.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-visible');
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(el => observer.observe(el));
+}
+
+// 3. Bento Card Mouse Spotlight & 3D Tilt
+function initBentoCardTiltAndSpotlight() {
+  const cards = document.querySelectorAll('.spotlight-card, .framer-card');
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Update CSS variables for radial spotlight
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+
+      // 3D subtle tilt
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+    });
+  });
+}
+
+// 4. Accordion Toggle Logic (Work Experience & Recruiter FAQ)
+function initAccordions() {
+  const accordionItems = document.querySelectorAll('.accordion-item');
+
+  accordionItems.forEach(item => {
+    const header = item.querySelector('.accordion-header');
+    if (!header) return;
+
+    header.addEventListener('click', () => {
+      const wasActive = item.classList.contains('active');
+      
+      // Close sibling accordions in same container
+      const parent = item.parentElement;
+      parent.querySelectorAll('.accordion-item').forEach(sibling => {
+        sibling.classList.remove('active');
+      });
+
+      if (!wasActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+}
+
+// 5. Category Filter Setup
 function setupFilterTabs() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Toggle active style
       filterBtns.forEach(b => {
         b.classList.remove('active', 'bg-sky-500', 'text-white', 'shadow-lg');
-        b.classList.add('bg-slate-800/80', 'text-slate-400');
+        b.classList.add('bg-slate-900', 'text-slate-400');
       });
-      btn.classList.remove('bg-slate-800/80', 'text-slate-400');
+      btn.classList.remove('bg-slate-900', 'text-slate-400');
       btn.classList.add('active', 'bg-sky-500', 'text-white', 'shadow-lg');
 
       const filter = btn.getAttribute('data-filter');
@@ -189,19 +314,23 @@ function setupFilterTabs() {
         const cardCategory = card.getAttribute('data-category');
         if (filter === 'all' || cardCategory === filter || (filter === 'engineering' && cardCategory === 'commercial')) {
           card.style.display = 'flex';
-          card.style.opacity = '0';
           setTimeout(() => {
             card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
           }, 50);
         } else {
-          card.style.display = 'none';
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.96)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
         }
       });
     });
   });
 }
 
-// Modal Handlers
+// 6. Case Study Modal Handlers
 function setupModalHandlers() {
   const modal = document.getElementById('projectModal');
   const modalTitle = document.getElementById('modalTitle');
@@ -210,6 +339,8 @@ function setupModalHandlers() {
   const modalMetrics = document.getElementById('modalMetrics');
   const modalBody = document.getElementById('modalBody');
   const closeModalBtn = document.getElementById('closeModalBtn');
+
+  if (!modal) return;
 
   document.querySelectorAll('[data-open-modal]').forEach(trigger => {
     trigger.addEventListener('click', (e) => {
@@ -229,7 +360,7 @@ function setupModalHandlers() {
       // Metrics grid
       modalMetrics.innerHTML = data.metrics.map(m => `
         <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-center">
-          <div class="text-sky-400 font-bold text-lg font-heading">${m.value}</div>
+          <div class="text-sky-400 font-bold text-lg font-display">${m.value}</div>
           <div class="text-xs text-slate-400 mt-0.5">${m.label}</div>
         </div>
       `).join('');
@@ -272,7 +403,7 @@ function setupModalHandlers() {
   });
 }
 
-// Mobile Menu Handler
+// 7. Mobile Menu Handler
 function setupMobileMenu() {
   const menuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -290,7 +421,7 @@ function setupMobileMenu() {
   }
 }
 
-// Interactive Project Cost & Time Optimization Calculator
+// 8. Interactive Project Cost & Time Optimization Calculator
 function setupInteractiveCalculator() {
   const projectScaleInput = document.getElementById('calcProjectScale');
   const daysSlider = document.getElementById('calcDaysSlider');
@@ -301,11 +432,11 @@ function setupInteractiveCalculator() {
   if (!daysSlider || !estSavings) return;
 
   function updateCalc() {
-    const scale = parseFloat(projectScaleInput.value) || 200000;
+    const scale = parseFloat(projectScaleInput.value) || 350000;
     const baseDays = parseInt(daysSlider.value) || 30;
     daysVal.textContent = `${baseDays} Days`;
 
-    // Mohamed's track record: ~18% material cost control, ~25% time acceleration
+    // Mohamed's proven track record: ~18% material cost control, ~25% time acceleration
     const savings = Math.round(scale * 0.18);
     const timeSaved = Math.round(baseDays * 0.25);
 
