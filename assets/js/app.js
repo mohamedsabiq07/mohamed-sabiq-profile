@@ -38,6 +38,7 @@ const caseStudies = {
     role: 'Digital Marketing & Business Development Lead',
     tags: ['Website Development', 'Local SEO', 'Lead Generation', 'AI Content Strategy', 'Conversion Optimization'],
     category: 'growth',
+    image: 'assets/images/ridout_homepage.png',
     summary: 'Built and scaled the entire digital presence for RidOut Pest Control Services in the UAE, driving customer acquisition across Dubai, Sharjah, and Ajman.',
     metrics: [
       { label: 'Scope', value: '3 Emirates (DXB/SHJ/AJM)' },
