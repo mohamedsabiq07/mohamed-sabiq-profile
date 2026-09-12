@@ -11,8 +11,8 @@ const caseStudies = {
     tags: ['Product Management', 'MVP Development', 'B2B Marketplace', 'Generative AI', 'UAE Construction'],
     category: 'growth',
     image: 'assets/images/supplysouq_homepage.png',
-    liveUrl: 'https://supplysouq.com',
-    liveUrlDisplay: 'supplysouq.com',
+    liveUrl: 'https://supply-souq-new-git-main-mohamedsabiq07-8902s-projects.vercel.app/',
+    liveUrlDisplay: 'SupplySouq Live App',
     summary: 'Identified a major structural friction point in UAE contractor-supplier procurement: opaque pricing, slow quotation cycles, and fragmented vendor discovery. Architected and led SupplySouq from ideation to working MVP.',
     metrics: [
       { label: 'Stage', value: 'Working MVP' },
@@ -41,7 +41,7 @@ const caseStudies = {
     tags: ['Website Development', 'Local SEO', 'Lead Generation', 'AI Content Strategy', 'Conversion Optimization'],
     category: 'growth',
     image: 'assets/images/ridout_homepage.png',
-    liveUrl: 'https://ridoutpestcontrol.ae',
+    liveUrl: 'https://www.ridoutpestcontrol.ae/',
     liveUrlDisplay: 'ridoutpestcontrol.ae',
     summary: 'Built and scaled the entire digital presence for RidOut Pest Control Services in the UAE, driving customer acquisition across Dubai, Sharjah, and Ajman.',
     metrics: [
