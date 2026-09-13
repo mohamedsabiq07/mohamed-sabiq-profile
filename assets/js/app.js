@@ -65,6 +65,34 @@ const caseStudies = {
       }
     ]
   },
+  'crestmark': {
+    title: 'The Crestmark by Ellington, Business Bay — Façade Lighting Installation',
+    role: 'Electrical Site Engineer | Façade Lighting Services LLC',
+    tags: ['Façade Lighting', 'Luxury Residential', 'Business Bay Dubai', 'DEWA Compliance', 'Ellington Properties', 'Site Leadership'],
+    category: 'engineering',
+    image: 'assets/images/crestmark_ellington.webp',
+    summary: 'Assumed site leadership for the prestigious Crestmark by Ellington waterfront residential development in Business Bay. Mobilized installation crews, established quality and safety protocols, and leading the end-to-end façade lighting execution and DEWA compliance.',
+    metrics: [
+      { label: 'Location', value: 'Business Bay, Dubai' },
+      { label: 'Developer', value: 'Ellington Properties' },
+      { label: 'Project Status', value: 'Active Installation' },
+      { label: 'Compliance', value: '100% DEWA Compliant' }
+    ],
+    sections: [
+      {
+        heading: 'Project Scope & Architecture',
+        content: 'The Crestmark is an ultra-prime waterfront residential project situated on the Dubai Water Canal by Ellington Properties. The architectural lighting package demands millimeter precision in luminaire mounting, hidden cabling raceways, and seamless integration with premium façade materials.'
+      },
+      {
+        heading: 'Engineering Leadership & Execution',
+        content: 'Took over on-site execution to direct light installation crews, coordinate daily critical paths with the main contractor and MEP consultants, supervise cable pulls and driver connections, and ensure complete compliance with DEWA regulations.'
+      },
+      {
+        heading: 'Current Milestone & Quality Assurance',
+        content: 'Actively coordinating installation timelines, site safety standards, material staging, and rigorous QA/QC inspection regimes to ensure on-time, zero-defect delivery.'
+      }
+    ]
+  },
   'corniche-kalothi': {
     title: 'Corniche Kalothi (G+6P+40) — High-Rise Turnaround',
     role: 'Electrical Site Engineer | Façade Lighting Services LLC',
@@ -175,7 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupFilterTabs();
   setupModalHandlers();
   setupMobileMenu();
-  setupInteractiveCalculator();
 });
 
 // 1. Interactive Magnetic Cursor & Glow Follower
@@ -499,32 +526,4 @@ function setupMobileMenu() {
       });
     });
   }
-}
-
-// 8. Interactive Project Cost & Time Optimization Calculator
-function setupInteractiveCalculator() {
-  const projectScaleInput = document.getElementById('calcProjectScale');
-  const daysSlider = document.getElementById('calcDaysSlider');
-  const daysVal = document.getElementById('calcDaysVal');
-  const estSavings = document.getElementById('calcEstSavings');
-  const estTimeSaved = document.getElementById('calcEstTimeSaved');
-
-  if (!daysSlider || !estSavings) return;
-
-  function updateCalc() {
-    const scale = parseFloat(projectScaleInput.value) || 350000;
-    const baseDays = parseInt(daysSlider.value) || 30;
-    daysVal.textContent = `${baseDays} Days`;
-
-    // Mohamed's proven track record: ~18% material cost control, ~25% time acceleration
-    const savings = Math.round(scale * 0.18);
-    const timeSaved = Math.round(baseDays * 0.25);
-
-    estSavings.textContent = `AED ${savings.toLocaleString()}`;
-    estTimeSaved.textContent = `${timeSaved} Days Faster`;
-  }
-
-  projectScaleInput.addEventListener('change', updateCalc);
-  daysSlider.addEventListener('input', updateCalc);
-  updateCalc();
 }
