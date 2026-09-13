@@ -3,7 +3,7 @@
    Inspired by elittefolio.framer.website
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Chivo+Mono:ital,wght@0,400;0,600;0,900;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Chivo+Mono:ital,wght@0,400;0,600;0,900;1,600&family=Syne:wght@700;800;900&family=Playfair+Display:ital,wght@1,600;1,700;1,800&display=swap');
 
 :root {
   --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -86,16 +86,29 @@ body {
   font-family: var(--font-mono);
 }
 
-/* Big Display Outline Text */
+/* Signature Accent for SABIQ */
+.name-accent {
+  font-family: 'Plus Jakarta Sans', var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #38bdf8 0%, #00f2fe 50%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.45));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.name-accent:hover {
+  filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.75));
+  transform: translateY(-2px);
+}
+
+/* Big Display Outline Text (legacy fallback) */
 .outline-text {
   -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.15);
   color: transparent;
   transition: -webkit-text-stroke 0.3s, color 0.3s;
-}
-
-.outline-text:hover {
-  -webkit-text-stroke: 1.5px #38bdf8;
-  color: rgba(56, 189, 248, 0.1);
 }
 
 /* Glassmorphism & Framer Bento Cards */
