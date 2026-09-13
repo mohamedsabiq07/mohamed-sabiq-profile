@@ -12,9 +12,7 @@ A modern, high-converting portfolio website tailored for **Mohamed Sabiq**, desi
    - Direct download links for both `Technical Sales & B2B CV` and `Marketing & Growth CV`.
 3. **Deep Dive Case Studies Modal**:
    - Interactive popups highlighting **Problem → Solution → Quantifiable Metrics**.
-4. **Interactive ROI & Schedule Optimization Calculator**:
-   - Visualizes material cost savings (~18%) and delivery acceleration (~25%) based on actual site experience.
-5. **Direct UAE Contact Actions**:
+4. **Direct UAE Contact Actions**:
    - Pre-filled WhatsApp click-to-chat (`+971 502364014`) and direct email integration.
 6. **Zero External Dependencies / Pure Performance**:
    - Built with modern HTML5, Tailwind CSS, Lucide/FontAwesome, and clean Vanilla JS.
@@ -71,7 +69,7 @@ portfolio website/
 │   ├── css/
 │   │   └── style.css             # Glassmorphism, glows & animations
 │   └── js/
-│       └── app.js                # Modal deep dives, filter tabs, ROI calculator
+│       └── app.js                # Modal deep dives, filter tabs, interactive modals
 ├── Mohamed_Sabiq_CV.pdf          # Technical Sales & B2B CV
 ├── Mohamed_Sabiq_Marketing_Business_Development_CV (1).pdf # Marketing & BD CV
 └── README.md                     # Documentation & deployment guide
