@@ -98,6 +98,7 @@ const caseStudies = {
     role: 'Electrical Site Engineer | Façade Lighting Services LLC',
     tags: ['Site Engineering', 'Project Recovery', 'DEWA Compliance', 'Subcontractor Coordination', 'High-Rise'],
     category: 'engineering',
+    image: 'assets/images/corniche_kalothi.webp',
     summary: 'Assumed control of a critically delayed 40-floor high-rise façade lighting project plagued by missing documentation, wiring bottlenecks, and material shortages.',
     metrics: [
       { label: 'Building Scale', value: 'G + 6P + 40 Floors' },
@@ -125,6 +126,7 @@ const caseStudies = {
     role: 'Electrical Site Engineer | Façade Lighting Services LLC',
     tags: ['Cost Engineering', 'Quantity Surveying', 'Resource Optimization', 'Fast-Track Execution'],
     category: 'engineering',
+    image: 'assets/images/ayat_gate.jpg',
     summary: 'Directed a newly assembled installation team to execute and certify the Ayat Gate façade lighting project 25% ahead of standard schedules while slashing material waste.',
     metrics: [
       { label: 'Execution Time', value: '2 Weeks (14 Days)' },
@@ -469,7 +471,7 @@ function setupModalHandlers() {
                 </div>
               </a>
             ` : `
-              <img src="${data.image}" alt="${data.title}" class="w-full h-auto max-h-72 object-cover object-top hover:scale-105 transition-transform duration-500">
+              <img src="${data.image}" alt="${data.title}" class="w-full h-auto max-h-80 object-cover object-center hover:scale-105 transition-transform duration-500">
             `}
           </div>
         ` : ''}
