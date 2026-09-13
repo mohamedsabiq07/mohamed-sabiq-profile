@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupFilterTabs();
   setupModalHandlers();
   setupMobileMenu();
+  setupResumeDropdown();
 });
 
 // 1. Interactive Magnetic Cursor & Glow Follower
@@ -510,6 +511,25 @@ function setupModalHandlers() {
       closeModal();
     }
   });
+
+  // Open modal automatically from URL hash (e.g. #ayat-gate) or query param (?project=ayat-gate)
+  function checkUrlHashModal() {
+    const rawHash = window.location.hash.replace('#', '').trim();
+    const urlParams = new URLSearchParams(window.location.search);
+    const target = urlParams.get('project') || rawHash;
+    if (target && caseStudies[target]) {
+      setTimeout(() => {
+        const trigger = document.querySelector(`[data-open-modal="${target}"]`);
+        if (trigger) {
+          trigger.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          trigger.click();
+        }
+      }, 300);
+    }
+  }
+
+  checkUrlHashModal();
+  window.addEventListener('hashchange', checkUrlHashModal);
 }
 
 // 7. Mobile Menu Handler
@@ -529,3 +549,86 @@ function setupMobileMenu() {
     });
   }
 }
+
+// 8. Robust Resume Dropdown Handler (Zero-Gap, Click Toggle & Hover Grace Period)
+function setupResumeDropdown() {
+  const container = document.getElementById('resumeDropdownContainer');
+  const btn = document.getElementById('resumeDropdownBtn');
+  const menu = document.getElementById('resumeDropdownMenu');
+  const chevron = document.getElementById('resumeChevron');
+
+  if (!container || !btn || !menu) return;
+
+  let isOpen = false;
+  let closeTimeout = null;
+
+  function showMenu() {
+    clearTimeout(closeTimeout);
+    isOpen = true;
+    btn.setAttribute('aria-expanded', 'true');
+    menu.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-1');
+    menu.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+    if (chevron) chevron.style.transform = 'rotate(180deg)';
+  }
+
+  function hideMenu(immediate = false) {
+    clearTimeout(closeTimeout);
+    if (immediate) {
+      isOpen = false;
+      btn.setAttribute('aria-expanded', 'false');
+      menu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-1');
+      menu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      if (chevron) chevron.style.transform = 'rotate(0deg)';
+    } else {
+      closeTimeout = setTimeout(() => {
+        isOpen = false;
+        btn.setAttribute('aria-expanded', 'false');
+        menu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-1');
+        menu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        if (chevron) chevron.style.transform = 'rotate(0deg)';
+      }, 300); // 300ms grace period ensures it never slips away accidentally
+    }
+  }
+
+  // Click on Resume button toggles open/close
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (isOpen) {
+      hideMenu(true);
+    } else {
+      showMenu();
+    }
+  });
+
+  // Hover over container keeps it open
+  container.addEventListener('mouseenter', () => {
+    showMenu();
+  });
+
+  // Mouse leaving container triggers graceful close with 300ms buffer
+  container.addEventListener('mouseleave', () => {
+    hideMenu(false);
+  });
+
+  // Clicking outside immediately closes
+  document.addEventListener('click', (e) => {
+    if (!container.contains(e.target)) {
+      hideMenu(true);
+    }
+  });
+
+  // Pressing Escape closes
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen) {
+      hideMenu(true);
+    }
+  });
+
+  // Clicking download link starts download and closes menu after brief pause
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      setTimeout(() => hideMenu(true), 200);
+    });
+  });
+}
+

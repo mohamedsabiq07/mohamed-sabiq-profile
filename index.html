@@ -65,27 +65,45 @@
       <!-- Action Buttons -->
       <div class="hidden sm:flex items-center gap-2.5">
         <!-- Dual CV Dropdown -->
-        <div class="relative group">
-          <button class="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-200 flex items-center gap-1.5 transition-all">
+        <div class="relative group" id="resumeDropdownContainer">
+          <button id="resumeDropdownBtn" type="button" aria-expanded="false" aria-haspopup="true" class="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-200 flex items-center gap-1.5 transition-all cursor-pointer select-none">
             <i class="fa-solid fa-file-arrow-down text-sky-400 text-xs"></i>
             <span>Resume</span>
-            <i class="fa-solid fa-chevron-down text-[9px] opacity-60"></i>
+            <i class="fa-solid fa-chevron-down text-[9px] opacity-60 transition-transform duration-200" id="resumeChevron"></i>
           </button>
-          <div class="absolute right-0 mt-2 w-64 bg-[#0c101a] border border-slate-800 rounded-2xl shadow-2xl p-2 hidden group-hover:block transition-all z-50">
-            <a href="./Mohamed_Sabiq_CV.pdf" download="Mohamed_Sabiq_Technical_Sales_CV.pdf" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-800/70 transition-colors">
-              <i class="fa-solid fa-bolt text-sky-400 mt-1 text-xs"></i>
-              <div>
-                <p class="text-xs font-semibold text-white">Technical Sales CV</p>
-                <p class="text-[10px] text-slate-400">Engineering, DEWA & Turnaround</p>
+          
+          <!-- Seamless hover bridge wrapper: top-full pt-2 eliminates mouse dead-zone -->
+          <div id="resumeDropdownMenu" class="absolute right-0 top-full pt-2 w-72 z-50 transition-all duration-200 opacity-0 pointer-events-none translate-y-1 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0">
+            <div class="bg-[#0c101a] border border-slate-800 rounded-2xl shadow-2xl p-2.5 backdrop-blur-xl ring-1 ring-white/10">
+              <div class="px-2.5 py-1.5 mb-1 border-b border-white/5 flex items-center justify-between text-[10px] font-mono-tag text-slate-400 uppercase tracking-wider">
+                <span>Select CV to Download</span>
+                <i class="fa-solid fa-download text-[10px] text-sky-400"></i>
               </div>
-            </a>
-            <a href="./Mohamed_Sabiq_Marketing_Business_Development_CV%20(1).pdf" download="Mohamed_Sabiq_Marketing_BD_CV.pdf" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-800/70 transition-colors">
-              <i class="fa-solid fa-chart-line text-emerald-400 mt-1 text-xs"></i>
-              <div>
-                <p class="text-xs font-semibold text-white">Marketing & Growth CV</p>
-                <p class="text-[10px] text-slate-400">SupplySouq, SEO & BD</p>
-              </div>
-            </a>
+              <a href="./Mohamed_Sabiq_CV.pdf" download="Mohamed_Sabiq_Technical_Sales_CV.pdf" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-800/80 group/item transition-colors">
+                <div class="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 mt-0.5 group-hover/item:bg-sky-500 group-hover/item:text-slate-950 transition-colors">
+                  <i class="fa-solid fa-bolt text-xs"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center justify-between">
+                    <p class="text-xs font-bold text-white group-hover/item:text-sky-300 transition-colors">Technical Sales CV</p>
+                    <i class="fa-solid fa-arrow-down text-[10px] text-slate-500 group-hover/item:text-sky-400 transition-colors"></i>
+                  </div>
+                  <p class="text-[10px] text-slate-400 mt-0.5">Engineering, DEWA & Turnaround</p>
+                </div>
+              </a>
+              <a href="./Mohamed_Sabiq_Marketing_Business_Development_CV%20(1).pdf" download="Mohamed_Sabiq_Marketing_BD_CV.pdf" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-800/80 group/item transition-colors mt-1">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 group-hover/item:bg-emerald-500 group-hover/item:text-slate-950 transition-colors">
+                  <i class="fa-solid fa-chart-line text-xs"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center justify-between">
+                    <p class="text-xs font-bold text-white group-hover/item:text-emerald-300 transition-colors">Marketing & Growth CV</p>
+                    <i class="fa-solid fa-arrow-down text-[10px] text-slate-500 group-hover/item:text-emerald-400 transition-colors"></i>
+                  </div>
+                  <p class="text-[10px] text-slate-400 mt-0.5">SupplySouq B2B, SEO & Growth</p>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -353,7 +371,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
           <!-- Project 1: SupplySouq -->
-          <div class="project-card framer-card p-6 flex flex-col justify-between group" data-category="growth">
+          <div id="supply-souq" class="project-card framer-card p-6 flex flex-col justify-between group" data-category="growth">
             <div>
               <div class="project-img-wrapper h-64 mb-6 relative">
                 <img src="assets/images/supplysouq_homepage.png" alt="SupplySouq UAE B2B Procurement Marketplace" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
@@ -394,7 +412,7 @@
           </div>
 
           <!-- Project 2: The Crestmark by Ellington -->
-          <div class="project-card framer-card p-6 flex flex-col justify-between group" data-category="engineering">
+          <div id="crestmark" class="project-card framer-card p-6 flex flex-col justify-between group" data-category="engineering">
             <div>
               <div class="project-img-wrapper h-64 mb-6 relative">
                 <img src="assets/images/crestmark_ellington.webp" alt="The Crestmark by Ellington Business Bay Dubai" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500">
@@ -431,7 +449,7 @@
           </div>
 
           <!-- Project 3: Corniche Kalothi Turnaround -->
-          <div class="project-card framer-card p-6 flex flex-col justify-between group" data-category="engineering">
+          <div id="corniche-kalothi" class="project-card framer-card p-6 flex flex-col justify-between group" data-category="engineering">
             <div>
               <div class="project-img-wrapper h-64 mb-6">
                 <img src="assets/images/corniche_kalothi.webp" alt="Corniche Kalothi G+6P+40 High-Rise Façade Lighting Project" class="w-full h-full object-cover">
@@ -463,7 +481,7 @@
           </div>
 
           <!-- Project 3: RidOut Pest Control -->
-          <div class="project-card framer-card p-6 flex flex-col justify-between group" data-category="growth">
+          <div id="ridout" class="project-card framer-card p-6 flex flex-col justify-between group" data-category="growth">
             <div>
               <div class="project-img-wrapper h-64 mb-6 relative">
                 <img src="assets/images/ridout_homepage.png" alt="RidOut Pest Control Services Website" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
@@ -504,7 +522,7 @@
           </div>
 
           <!-- Project 4: Ayat Gate Façade Lighting -->
-          <div class="project-card framer-card p-6 flex flex-col justify-between group" data-category="engineering">
+          <div id="ayat-gate" class="project-card framer-card p-6 flex flex-col justify-between group" data-category="engineering">
             <div>
               <div class="project-img-wrapper h-64 mb-6">
                 <img src="assets/images/ayat_gate.jpg" alt="Ayat Gate Façade Lighting Installation" class="w-full h-full object-cover">
