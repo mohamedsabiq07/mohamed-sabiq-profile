@@ -143,6 +143,12 @@
 
   <main class="relative z-10 pt-28">
 
+    <!-- WebGL Hero Ribbon Background -->
+    <div id="hero-ribbon-container">
+      <canvas id="hero-ribbon-canvas"></canvas>
+      <div class="hero-ribbon-veil"></div>
+    </div>
+
     <!-- HERO SECTION -->
     <section class="min-h-[85vh] flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 relative">
       
@@ -228,6 +234,7 @@
         <span>✦ ELECTRICAL SITE ENGINEER</span>
         <span>✦ B2B TECHNICAL SALES</span>
         <span>✦ SUPPLYSOUQ B2B MARKETPLACE MVP</span>
+        <span>✦ KILNWAVE REAL-TIME AI AUDIO ENGINE</span>
         <span>✦ 18% MATERIAL COST REDUCTION</span>
         <span>✦ DEWA STANDARDS COMPLIANT</span>
         <span>✦ AI-ASSISTED WORKFLOW AUTOMATION</span>
@@ -239,6 +246,7 @@
         <span>✦ ELECTRICAL SITE ENGINEER</span>
         <span>✦ B2B TECHNICAL SALES</span>
         <span>✦ SUPPLYSOUQ B2B MARKETPLACE MVP</span>
+        <span>✦ KILNWAVE REAL-TIME AI AUDIO ENGINE</span>
         <span>✦ 18% MATERIAL COST REDUCTION</span>
         <span>✦ DEWA STANDARDS COMPLIANT</span>
         <span>✦ AI-ASSISTED WORKFLOW AUTOMATION</span>
@@ -369,6 +377,47 @@
 
         <!-- Project Cards Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <!-- Project: Kilnwave AI Audio Platform -->
+          <div id="kilnwave" class="project-card framer-card p-6 flex flex-col justify-between group" data-category="growth">
+            <div>
+              <div class="project-img-wrapper h-64 mb-6 relative">
+                <img src="assets/images/kilnwave_preview.png" alt="Kilnwave Real-Time Browser AI Audio Platform" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
+                <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-mono-tag font-semibold bg-[#05070c]/80 backdrop-blur-md border border-indigo-500/30 text-indigo-400">
+                  WEBGL & REAL-TIME DSP
+                </div>
+                <a href="./kilnwave.html" target="_blank" rel="noopener noreferrer" class="absolute top-4 right-4 px-3 py-1 rounded-full text-[11px] font-mono-tag font-semibold bg-indigo-600 hover:bg-indigo-500 text-white flex items-center gap-1.5 shadow-lg transition-all" title="Launch Kilnwave Live Experience">
+                  <span>Live App</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                </a>
+              </div>
+
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-2xl font-bold text-white font-display group-hover:text-indigo-400 transition-colors">
+                  Kilnwave — Real-Time AI Audio Platform
+                </h3>
+                <div class="icon-circle-btn shrink-0">
+                  <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+              </div>
+
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+                Zero-asset browser-native audio interface powered by hardware-accelerated WebGL ribbons, 4 real-time canvas animation loops, and an interactive 72-band frequency spectrum field.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+              <a href="./kilnwave.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 hover:text-indigo-300 border border-indigo-500/30 text-xs font-semibold transition-all">
+                <i class="fa-solid fa-wave-square text-[11px]"></i>
+                <span>Explore Live WebGL App</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+              <button data-open-modal="kilnwave" class="text-xs font-bold uppercase tracking-wider text-indigo-400 hover:text-indigo-300 flex items-center gap-1">
+                <span>View Architecture</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
+            </div>
+          </div>
 
           <!-- Project 1: SupplySouq -->
           <div id="supply-souq" class="project-card framer-card p-6 flex flex-col justify-between group" data-category="growth">

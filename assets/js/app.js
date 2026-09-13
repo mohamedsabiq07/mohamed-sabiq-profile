@@ -194,6 +194,40 @@ const caseStudies = {
         content: 'Utilize Excel and Power BI reporting models to track material schedules, procurement timelines, and client approvals in real time.'
       }
     ]
+  },
+  'kilnwave': {
+    title: 'Kilnwave — Real-Time Browser AI Audio Platform',
+    role: 'Frontend Architect & Generative Systems Specialist',
+    tags: ['WebGL Fragment Shader', 'Generative UI', 'Real-Time Canvas DSP', 'Zero-Asset Architecture', 'Interactive Audio'],
+    category: 'growth',
+    image: 'assets/images/kilnwave_preview.png',
+    liveUrl: './kilnwave.html',
+    liveUrlDisplay: 'Launch Kilnwave Live App',
+    summary: 'Engineered a browser-native product interface for Kilnwave whose visual system is generated entirely in real time without photographic assets, powered by hardware-accelerated WebGL shaders, four independent canvas DSP engines, and a 72-band interactive spectrum analyzer.',
+    metrics: [
+      { label: 'Render Engine', value: '100% WebGL / Canvas' },
+      { label: 'Framerate', value: '60 FPS Hardware-Acc' },
+      { label: 'Asset Payload', value: '0 KB Images/Video' },
+      { label: 'Design System', value: 'Strict Zero-Radius' }
+    ],
+    sections: [
+      {
+        heading: 'The Vision & Technical Challenge',
+        content: 'Demonstrated cutting-edge AI product UI execution by constructing an audio synthesis interface rendered completely in-browser. Conveying extreme acoustic fidelity and sub-millisecond roundtrip processing without loading static photographs or video loops.'
+      },
+      {
+        heading: 'Hardware-Accelerated WebGL Ribbon Shader',
+        content: 'Wrote high-performance GLSL fragment shaders calculating continuous additive sine ribbons (Indigo #6366F1, Violet #8B5CF6, Cyan #06B6D4) that drift and bloom where they overlap, veiled by a smooth downward gradient to maintain flawless typographic contrast.'
+      },
+      {
+        heading: 'Four Independent Real-Time Canvas Engines',
+        content: 'Integrated four distinct 2D canvas loops: neural resynthesis waveform oscillation, a dynamic 8x4 matrix of denoising cells, 4 decoupled latent stem tracks, and a sweeping contextual radar attention ring.'
+      },
+      {
+        heading: 'Interactive Spectrum & Zero-Radius Precision',
+        content: 'Built a 72-bar spectral analyzer featuring real-time Hz readout and isolated frequency selection box, alongside an accessible plus-to-minus FAQ accordion, mono metadata eyebrows, and strict prefers-reduced-motion compliance.'
+      }
+    ]
   }
 };
 
@@ -206,6 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupModalHandlers();
   setupMobileMenu();
   setupResumeDropdown();
+  initHeroRibbonShader();
 });
 
 // 1. Interactive Magnetic Cursor & Glow Follower
@@ -347,17 +382,21 @@ function setupFilterTabs() {
       const filter = btn.getAttribute('data-filter');
 
       projectCards.forEach(card => {
+        if (card._filterTimeout) {
+          clearTimeout(card._filterTimeout);
+          card._filterTimeout = null;
+        }
         const cardCategory = card.getAttribute('data-category');
         if (filter === 'all' || cardCategory === filter || (filter === 'engineering' && cardCategory === 'commercial')) {
           card.style.display = 'flex';
-          setTimeout(() => {
+          card._filterTimeout = setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'scale(1)';
           }, 50);
         } else {
           card.style.opacity = '0';
           card.style.transform = 'scale(0.96)';
-          setTimeout(() => {
+          card._filterTimeout = setTimeout(() => {
             card.style.display = 'none';
           }, 300);
         }
@@ -630,5 +669,198 @@ function setupResumeDropdown() {
       setTimeout(() => hideMenu(true), 200);
     });
   });
+}
+
+// 8. Hero WebGL Additive Ribbon Shader Background
+function initHeroRibbonShader() {
+  const canvas = document.getElementById('hero-ribbon-canvas');
+  const container = document.getElementById('hero-ribbon-container');
+  if (!canvas || !container) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    canvas.style.display = 'none';
+    return;
+  }
+
+  let gl = null;
+  try {
+    gl = canvas.getContext('webgl', { alpha: true, antialias: false, powerPreference: 'high-performance' }) ||
+         canvas.getContext('experimental-webgl', { alpha: true, antialias: false });
+  } catch (err) {
+    gl = null;
+  }
+
+  let isVisible = true;
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isVisible = entry.isIntersecting;
+      });
+    }, { threshold: 0.05 });
+    observer.observe(container);
+  }
+
+  if (!gl) {
+    initCanvas2DFallback(canvas, container);
+    return;
+  }
+
+  const vsSource = 'attribute vec2 a_position; void main() { gl_Position = vec4(a_position, 0.0, 1.0); }';
+
+  // Tuned for Mohamed Sabiq's portfolio:
+  // Ribbon 1: Sky/Cyan (#0EA5E9) -> vec3(0.055, 0.647, 0.914)
+  // Ribbon 2: Indigo (#6366F1)   -> vec3(0.388, 0.400, 0.945)
+  // Ribbon 3: Violet (#8B5CF6)   -> vec3(0.545, 0.361, 0.965)
+  const fsSource = [
+    'precision highp float;',
+    'uniform vec2 u_resolution;',
+    'uniform float u_time;',
+    'void main() {',
+    '  vec2 uv = gl_FragCoord.xy / u_resolution;',
+    '  float y1 = 0.54 + 0.12 * sin(2.1 * uv.x + u_time * 0.48 + 0.0) + 0.06 * sin(4.3 * uv.x - u_time * 0.32 + 1.2);',
+    '  float d1 = abs(uv.y - y1);',
+    '  float r1 = smoothstep(0.065, 0.0, d1);',
+    '  float g1 = exp(-4.5 * d1) * 0.40;',
+    '  vec3 col1 = vec3(0.055, 0.647, 0.914) * (r1 + g1);',
+    '  float y2 = 0.49 + 0.14 * sin(1.7 * uv.x - u_time * 0.38 + 2.4) + 0.07 * sin(3.6 * uv.x + u_time * 0.50 + 3.1);',
+    '  float d2 = abs(uv.y - y2);',
+    '  float r2 = smoothstep(0.070, 0.0, d2);',
+    '  float g2 = exp(-4.2 * d2) * 0.40;',
+    '  vec3 col2 = vec3(0.388, 0.400, 0.945) * (r2 + g2);',
+    '  float y3 = 0.51 + 0.13 * sin(2.5 * uv.x + u_time * 0.55 + 4.8) + 0.05 * sin(5.1 * uv.x - u_time * 0.40 + 0.8);',
+    '  float d3 = abs(uv.y - y3);',
+    '  float r3 = smoothstep(0.060, 0.0, d3);',
+    '  float g3 = exp(-4.8 * d3) * 0.40;',
+    '  vec3 col3 = vec3(0.545, 0.361, 0.965) * (r3 + g3);',
+    '  vec3 totalCol = col1 + col2 + col3;',
+    '  float alpha = clamp(r1 + r2 + r3 + (g1 + g2 + g3) * 0.70, 0.0, 0.85);',
+    '  gl_FragColor = vec4(totalCol, alpha);',
+    '}'
+  ].join('\n');
+
+  function createShader(glCtx, type, source) {
+    const s = glCtx.createShader(type);
+    glCtx.shaderSource(s, source);
+    glCtx.compileShader(s);
+    if (!glCtx.getShaderParameter(s, glCtx.COMPILE_STATUS)) {
+      glCtx.deleteShader(s);
+      return null;
+    }
+    return s;
+  }
+
+  const vs = createShader(gl, gl.VERTEX_SHADER, vsSource);
+  const fs = createShader(gl, gl.FRAGMENT_SHADER, fsSource);
+  if (!vs || !fs) {
+    initCanvas2DFallback(canvas, container);
+    return;
+  }
+
+  const prog = gl.createProgram();
+  gl.attachShader(prog, vs);
+  gl.attachShader(prog, fs);
+  gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+    initCanvas2DFallback(canvas, container);
+    return;
+  }
+
+  gl.useProgram(prog);
+
+  const posBuf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, posBuf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+    -1, -1,
+     1, -1,
+    -1,  1,
+    -1,  1,
+     1, -1,
+     1,  1
+  ]), gl.STATIC_DRAW);
+
+  const posAttr = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(posAttr);
+  gl.vertexAttribPointer(posAttr, 2, gl.FLOAT, false, 0, 0);
+
+  const timeLoc = gl.getUniformLocation(prog, 'u_time');
+  const resLoc = gl.getUniformLocation(prog, 'u_resolution');
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = Math.floor(container.clientWidth * dpr);
+    const h = Math.floor(container.clientHeight * dpr);
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+      gl.viewport(0, 0, w, h);
+    }
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  const startTime = performance.now();
+  function render(now) {
+    if (isVisible) {
+      resize();
+      const elapsed = (now - startTime) * 0.001;
+      gl.uniform1f(timeLoc, elapsed);
+      gl.uniform2f(resLoc, canvas.width, canvas.height);
+      gl.clearColor(0, 0, 0, 0);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.drawArrays(gl.TRIANGLES, 0, 6);
+    }
+    requestAnimationFrame(render);
+  }
+  requestAnimationFrame(render);
+}
+
+function initCanvas2DFallback(canvas, container) {
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = container.clientWidth * dpr;
+    canvas.height = container.clientHeight * dpr;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  let isVisible = true;
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => isVisible = entry.isIntersecting);
+    }, { threshold: 0.05 });
+    observer.observe(container);
+  }
+
+  function render2D(t) {
+    if (isVisible) {
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+      ctx.globalCompositeOperation = 'lighter';
+      const ribbons = [
+        { col: 'rgba(14, 165, 233, 0.65)', freq: 0.002, speed: 0.0005, amp: h * 0.12, base: h * 0.52 },
+        { col: 'rgba(99, 102, 241, 0.65)', freq: 0.0018, speed: -0.0004, amp: h * 0.14, base: h * 0.48 },
+        { col: 'rgba(139, 92, 246, 0.60)', freq: 0.0022, speed: 0.0007, amp: h * 0.11, base: h * 0.50 }
+      ];
+      ribbons.forEach(rb => {
+        ctx.beginPath();
+        ctx.strokeStyle = rb.col;
+        ctx.lineWidth = 14 * (window.devicePixelRatio || 1);
+        ctx.lineCap = 'round';
+        for (let x = 0; x <= w; x += 12) {
+          const y = rb.base + Math.sin(x * rb.freq + t * rb.speed) * rb.amp;
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      });
+    }
+    requestAnimationFrame(render2D);
+  }
+  requestAnimationFrame(render2D);
 }
 
